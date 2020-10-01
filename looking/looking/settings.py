@@ -30,15 +30,24 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-INSTALLED_APPS = [
+DJANGO_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+ 
 ]
 
+PROJECT_APPS = [
+    'apps.home',
+    'apps.login',
+    'apps.user',
+]
+
+
+INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -54,7 +63,7 @@ ROOT_URLCONF = 'looking.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR/ 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -75,9 +84,13 @@ WSGI_APPLICATION = 'looking.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'lookingdb',
+        'USER': 'ronald',
+        'PASSWORD': '1061789331rj',
+        'HOST': '127.0.0.1',
+        'DATABASE_PORT': '5432',
+}
 }
 
 
@@ -98,7 +111,7 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
+GDAL_LIBRARY_PATH = 'C:\\Python37\\Lib\\site-packages\\osgeo\\gdal300.dll'
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
