@@ -107,6 +107,7 @@ class Usuarios (AbstractBaseUser):
     depart = models.CharField('Departamento', max_length=50, choices=DEPAR_CHOICES, blank=False, null=False, default="0")
     gender = models.CharField('Tipo de Genero', max_length=50, choices=GENDER_TYPE_CHOICES,  blank=False, null=False, default="0")
     profileImg = models.ImageField('Imagen de Perfil', upload_to='profile/img/', blank=True, null=True)
+    regisDate = models.DateField('Fecha de Registro', auto_now=True, auto_now_add=False)
     postal = models.IntegerField(default=0)
     activeUser = models.BooleanField(default=True)
     admUser = models.BooleanField(default=False)
