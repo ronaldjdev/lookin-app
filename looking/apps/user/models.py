@@ -107,10 +107,10 @@ class Usuarios (AbstractBaseUser):
     depart = models.CharField('Departamento', max_length=50, choices=DEPAR_CHOICES, blank=False, null=False, default="0")
     gender = models.CharField('Tipo de Genero', max_length=50, choices=GENDER_TYPE_CHOICES,  blank=False, null=False, default="0")
     profileImg = models.ImageField('Imagen de Perfil', upload_to='profile/img/', blank=True, null=True)
-    regisDate = models.DateField('Fecha de Registro', auto_now=True, auto_now_add=False)
-    postal = models.IntegerField(default=0)
-    activeUser = models.BooleanField(default=True)
-    admUser = models.BooleanField(default=False)
+    regisDate = models.DateField('Fecha de Registro', auto_now=False, auto_now_add=True)
+    postal = models.IntegerField('Codigo Postal',default=0)
+    activeUser = models.BooleanField('Activo',default=True)
+    admUser = models.BooleanField('Estado del superusuario',default=False)
     objects = UserManager()
 
     class Meta:
@@ -139,8 +139,12 @@ class Usuarios (AbstractBaseUser):
         return True
 
 # Propiedad que marca los superusuarios en la tabla
-
-
     @property
     def is_staff (self):
         return self.admUser
+
+# Propiedad que demarca la fecha de registo
+
+    @property
+    def date_joined (self):
+        return self.regisDate

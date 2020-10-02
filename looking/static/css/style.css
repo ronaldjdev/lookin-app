@@ -2215,9 +2215,6 @@ svg:not(:root) {
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.15) !important
 }
 
-section.services {
-    background-color: #000;
-}
 
 .text-secondary-2 {
     color: white !important;
