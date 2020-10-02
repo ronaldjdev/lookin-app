@@ -16,7 +16,7 @@ from       .forms                       import LoginForms       , RegistryForms
 # Inicio de sesion
 
 class LoginView (FormView):
-    template_name = 'sign-in.html'
+    template_name = 'account/sign-in.html'
     form_class = LoginForms
     success_url = reverse_lazy('index')
 

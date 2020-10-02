@@ -20,9 +20,16 @@ from apps  .login  .views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # Home
     path('', IndexView.as_view(), name= 'index' ),
     path('index', IndexView.as_view(), name= 'index' ),
+    # Info
     path('about', AboutView.as_view(), name= 'about'),
+    path('contact', ContactView.as_view(), name= 'contact'),
+    # Account
     path('login', LoginView.as_view(), name= 'login'),
+    path('logout', logout_page, name= 'logout'),
+    # Property
+    path('add-property', AddPropertyView.as_view(), name= 'add-property')
     
 ]
