@@ -15,7 +15,5 @@ class AboutView(TemplateView):
     template_name = "info/about.html"
 
 
-class AddPropertyView(TemplateView):
-    template_name = "add/add-property.html"
 
 
