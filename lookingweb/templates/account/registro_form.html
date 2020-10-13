@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% block title %}Registro{% endblock %}
+{% block content %}
+<!--Registry Form-->
+<section class="section-registry section-t8 justify-content-center">
+    <div class="container">
+        <div class="py-5 text-center">
+            <img class="d-block mx-auto mb-4" src="static/img/apple-touch-icon.png" alt="" width="72" height="92">
+            <h2>Por favor, Registrate</h2>
+            <p class="lead">Y haz parte de nuestra maravillosa comunidad</p>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center">
+        <div class="col-md-8 order-md-1">
+            <h4 class="mb-3">Ingresa el formulario</h4>
+
+
+            <form action="" method='POST'> {% csrf_token %}
+                <div class="row">
+                    <div class="container shadow p-4 mb-4 bg-white">
+                        <div class="row ">
+                            <div class="col-md-6 mb-3">
+                                {{form.firstName.label_tag}} {{ form.firstName }}
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                {{form.lastName.label_tag}} {{form.lastName}}
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="container rounded-lg shadow p-4 mb-4 bg-white ">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                {{form.numIden.label_tag}} {{form.numIden}}
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                {{form.username.label_tag}} {{form.username}}
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="container shadow p-4 mb-4 bg-white">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                {{form.email.label_tag}} {{form.email}}
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                {{form.gender.label_tag}} {{form.gender}}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container shadow p-4 mb-4 bg-white">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                {{form.password1.label_tag}} {{form.password1}}
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                {{form.password2.label_tag}} {{form.password2}}
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="container shadow p-4 mb-4 bg-white">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                {{form.country.label_tag}} {{form.country}}
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                {{form.depart.label_tag}} {{form.depart}}
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                {{form.address.label_tag}} {{form.address}}
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                {{form.address2.label_tag}} {{form.address2}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <hr class="mb-4">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="same-address">
+                            <label class="custom-control-label" for="same-address">Terminos y Condiciones</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="save-info">
+                            <label class="custom-control-label" for="save-info">Quiero recibir informacion en mi
+                                email</label>
+                        </div>
+                        </hr>
+                    </div>
+                    <hr class="mb-4">
+                    <button class="btn btn-primary btn-lg btn-block " type="submit" href="index"
+                        style="border-radius: 5rem;">Registrate</button>
+                    </hr>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+<!--/ Registry Form End /-->
+{% endblock %}
