@@ -1,0 +1,264 @@
+h4 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+img.bg-image {
+  font-family: "object-fit: cover;";
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.hover-scale-bg-image .bg-image {
+  transition: all 0.2s ease-in-out;
+}
+
+.hover-scale-bg-image:hover .bg-image,
+.hover-scale-bg-image:focus .bg-image {
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+.mh-full-screen {
+  min-height: 100vh;
+}
+
+@media screen and (-ms-high-contrast: active),
+  screen and (-ms-high-contrast: none) {
+  .mh-full-screen {
+    height: 100vh;
+  }
+}
+
+.d-flex {
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+
+.align-items-center {
+  -ms-flex-align: center !important;
+  align-items: center !important;
+}
+
+.dark-overlay {
+  position: relative;
+  overflow: hidden;
+}
+
+.dark-overlay {
+  position: relative;
+  z-index: 20;
+}
+
+.dark-overlay::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: " ";
+  opacity: 0.3;
+  background: #000;
+}
+
+.text-white {
+  color: #fff !important;
+}
+
+.text-lg {
+  font-size: 1.25rem;
+}
+
+.dark-overlay {
+  position: relative;
+  z-index: 20;
+}
+
+.py-lg-0 {
+  padding-top: 0 !important;
+}
+
+.display-3 {
+  font-size: 4.5rem;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+@media (max-width: 767.98px) {
+  .display-3 {
+    font-size: 2.7rem;
+  }
+}
+
+.font-weight-light {
+  font-weight: 300 !important;
+}
+
+.mb-5 {
+  margin-bottom: 3rem !important;
+}
+
+.mb-6 {
+  margin-bottom: 6rem !important;
+}
+
+.btn-outline-light {
+  color: #f8f9fa;
+  border-color: #f8f9fa;
+}
+
+.btn-outline-light:hover {
+  color: #212529;
+  background-color: #f8f9fa;
+  border-color: #f8f9fa;
+}
+
+.btn-outline-light:focus,
+.btn-outline-light.focus {
+  box-shadow: 0 0 0 0.2rem rgba(248, 249, 250, 0.5);
+}
+
+.btn-outline-light.disabled,
+.btn-outline-light:disabled {
+  color: #f8f9fa;
+  background-color: transparent;
+}
+
+.btn-outline-light:not(:disabled):not(.disabled):active,
+.btn-outline-light:not(:disabled):not(.disabled).active,
+.show > .btn-outline-light.dropdown-toggle {
+  color: #212529;
+  background-color: #f8f9fa;
+  border-color: #f8f9fa;
+}
+
+.btn-outline-light:not(:disabled):not(.disabled):active:focus,
+.btn-outline-light:not(:disabled):not(.disabled).active:focus,
+.show > .btn-outline-light.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(248, 249, 250, 0.5);
+}
+
+.text-shadow {
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.font-weight-bold {
+  font-weight: 700 !important;
+}
+
+.light-overlay .overlay-content,
+.dark-overlay .overlay-content,
+.gradient-overlay .overlay-content {
+  position: relative;
+  z-index: 20;
+}
+.text-lg {
+  font-size: 1.25rem;
+}
+.text-white {
+  color: #fff !important;
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+user agent stylesheet div {
+  display: block;
+}
+@media (max-width: 992px)  {
+    .pb-lg-0, .py-lg-0 {
+    padding-bottom: 0 !important;}
+}
+@media (max-width: 992px) {.pt-lg-0, .py-lg-0 {
+  padding-top: 0 !important;
+}}
+.pb-6,
+.py-6 {
+  padding-bottom: 6rem !important;
+}
+.pt-6,
+.py-6 {
+  padding-top: 6rem !important;
+}
+@media (max-width: 1200px) {.container,
+  .container-sm,
+  .container-md,
+  .container-lg,
+  .container-xl {
+  max-width: 1140px;
+}}
+@media (max-width: 992px) {.container,
+  .container-sm,
+  .container-md,
+  .container-lg {
+  max-width: 960px;
+}}
+@media (max-width: 768px) {.container, .container-sm, .container-md {
+  max-width: 720px;
+}}
+@media (max-width: 576px) {.container, .container-sm {
+  max-width: 540px;
+}}
+@media (max-width: 1200px) {.container {
+  max-width: 1140px;
+}}
+@media (max-width: 992px) {.container {
+  max-width: 960px;
+}}
+@media (max-width: 768px) {
+    .container {
+    max-width: 720px;
+}}
+@media (max-width: 576px) {.container {
+  max-width: 540px;
+}}

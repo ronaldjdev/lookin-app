@@ -4985,11 +4985,22 @@ input[type="button"].btn-block {
     border-bottom-left-radius: .4rem
 }
 
+/*======================================
+//--//-->   SERVICES - CARD-BODY
+======================================*/
 .card-body {
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
     min-height: 1px;
     padding: 1.25rem
+}
+
+
+@media (min-width: 768px)
+.col-md-4 {
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
 }
 
 .card-title {

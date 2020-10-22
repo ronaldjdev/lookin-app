@@ -14,13 +14,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
-from looking.apps.login.views import RegistrarUsuarios
+
 from django.contrib import admin
 from django.urls import path
-from django.contrib.auth.decorators import login_required
-from apps.home.views import IndexView, AboutView, ContactView
-from apps.login.views import LoginView, logout_page, AccountView, RegistrarUsuarios
-from apps.stock.views import AddPropertyView, AddPropertyView1, AddPropertyView2, AddPropertyView3, AddPropertyView4, AddPropertyView5
+from django.contrib.auth.decorators import login_required  
+from apps.home.views import *
+from apps.login.views import *
+from apps.stock.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -32,15 +32,17 @@ urlpatterns = [
     path('contact', ContactView.as_view(), name= 'contact'),
     # Account
     path('login', LoginView.as_view(), name= 'login'),
-    path('logout', logout_page, name= 'logout'),
-    path('account', AccountView.as_view(), name= 'account'),
+    path('logout', login_required(logout_page), name= 'logout'),
+    path('account', login_required(AccountView.as_view()), name= 'account'),
     path('sign-in', RegistrarUsuarios.as_view(), name= 'sign-in'),
+    # User Personal Edit
+    path('user-personal', UserUpdateView.as_view(), name= 'user-personal'),
     # Property
-    path('add-property'  , login_required(AddPropertyView .as_view()), name= 'add-property'  ),
+    path('warning'  , WarningView .as_view(), name= 'warning'  ),
+    path('add-property'  , AddPropertyView .as_view(), name= 'add-property'  ),
     path('add-property-1', login_required(AddPropertyView1.as_view()), name= 'add-property-1'),
     path('add-property-2', login_required(AddPropertyView2.as_view()), name= 'add-property-2'),
     path('add-property-3', login_required(AddPropertyView3.as_view()), name= 'add-property-3'),
     path('add-property-4', login_required(AddPropertyView4.as_view()), name= 'add-property-4'),
     path('add-property-5', login_required(AddPropertyView5.as_view()), name= 'add-property-5'),
-
 ]

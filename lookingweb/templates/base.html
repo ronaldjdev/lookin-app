@@ -46,6 +46,8 @@
     <!-- Main Stylesheet File -->
     <link rel="stylesheet" href="{% static 'css/login.css' %}">
     <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+    <!--/ Waves Animation /-->
+    <link rel="stylesheet" href="{% static 'css/wave.css' %}">
 
     {% block style %}
 
@@ -57,7 +59,7 @@
     <!-- =======================================================
     Project Name: Looking
     Author: Ronald Javier Echeverry
-    License: https://bootstrapmade.com/license/
+    License: https://getbootstrap.com/docs/4.0/about/license/
   ======================================================= -->
 </head>
 {% endblock %}
@@ -211,6 +213,10 @@
                         <a href="login" class="btn btn-primary" role="button" aria-pressed="true"
                             style="border-radius: 5rem;">Iniciar Sesion</a>
                     </div>
+                    <div class="btn">
+                        <a href="sign-in" class="btn btn-primary" role="button" aria-pressed="true"
+                            style="border-radius: 5rem;">Registrarse</a>
+                    </div>
                     {% else %}
                     <li class="nav-item dropdown">
                         <a href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -226,14 +232,19 @@
                         </div>
                     </li>
                     {% endif %}
-                    <div class="btn">
-                        <a href="add-property" class="btn btn-primary" role="button" aria-pressed="true"
-                            style="border-radius: 5rem;">Agregar Inmueble</a>
-                    </div>
-                    <div class="btn">
-                        <a href="sign-in" class="btn btn-primary" role="button" aria-pressed="true"
-                            style="border-radius: 5rem;">Registrarse</a>
-                    </div>
+                    
+                    {% if request.user.is_authenticated %}
+                        <div class="btn">
+                            <a href="add-property" class="btn btn-primary" role="button" aria-pressed="true"
+                                style="border-radius: 5rem;">Agregar Inmueble</a>
+                        </div>
+                    {% else %}
+                        <div class="btn">
+                            <a href="warning" class="btn btn-primary" role="button" aria-pressed="true"
+                                style="border-radius: 5rem;">Agregar Inmueble</a>
+                        </div>
+                    {% endif %}
+                        
                 </ul>
             </div>
             <button type="button" class="btn btn-b-n navbar-toggle-box-collapse d-none d-md-block"
@@ -316,28 +327,12 @@
                 <div class="col-sm-12 col-md-4 section-md-t3">
                     <div class="widget-a">
                         <div class="w-header-a">
-                            <h3 class="w-title-a text-brand">Sitios Internacionales</h3>
+                            <h3 class="w-title-a text-brand">Ciudades</h3>
                         </div>
                         <div class="w-body-a">
                             <ul class="list-unstyled">
                                 <li class="item-list-a">
-                                    <i class="fa fa-angle-right"></i> <a href="#">Venezuela</a>
-                                </li>
-                                <li class="item-list-a">
-                                    <i class="fa fa-angle-right"></i> <a href="#">China</a>
-                                </li>
-                                <li class="item-list-a">
-                                    <i class="fa fa-angle-right"></i> <a href="#">Hong Kong</a>
-                                </li>
-                                <li class="item-list-a">
-                                    <i class="fa fa-angle-right"></i> <a href="#">Argentina</a>
-                                </li>
-                                <li class="item-list-a">
-                                    <i class="fa fa-angle-right"></i> <a href="#">Singapore</a>
-                                </li>
-                                <li class="item-list-a">
-                                    <i class="fa fa-angle-right"></i>
-                                    <a href="#">Philippines</a>
+                                    <i class="fa fa-angle-right"></i> <a href="#">Popayan</a>
                                 </li>
                             </ul>
                         </div>

@@ -62,7 +62,7 @@ class PricingView(TemplateView):
 class RegistrarUsuarios (CreateView):
     model = Usuarios
     form_class = RegistryForms
-    template_name = 'registro_form.html'
+    template_name = 'account/registro_form.html'
     success_url = reverse_lazy('index')
 
 
@@ -74,12 +74,6 @@ class ListarUsuarios(ListView):
 
     def get_queryset(self):
         return self.model.objects.filter(activeUser=True)
-
-
-# Actualizacion de usuarios
-class ActualizarUsuarios(UpdateView):
-    model = Usuarios
-    template_name = "userUpdate.html"
 
 
 # Borrar Usuarios
@@ -94,6 +88,13 @@ class EliminarUsuarios(DeleteView):
 
 class AccountView(TemplateView):
     template_name = "account/account.html"
+
+# Modificacion de info Usuario
+
+
+class UserUpdateView(TemplateView):
+    model = Usuarios
+    template_name = "account/user-personal.html"
 
 
 

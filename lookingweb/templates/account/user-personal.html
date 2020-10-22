@@ -1,0 +1,282 @@
+{% extends 'base.html' %}
+{% block content %}
+<!--/ Breadcrumb Star /-->
+<section class="intro-single">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-lg-8">
+                <div class="title-single-box">
+                    <h1 class="title-single">Informacion personal</h1>
+                    <span class="color-text-a">Administra si informacion personal y configuracion aqui</span>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-4">
+                <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="index">Inicio</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="account">Cuenta</a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">
+                            Informacion personal
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+<!--/ Breadcrumb End /-->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7">
+                <div class="text-block">
+                    <div class="row mb-3">
+                        <div class="col-sm-9">
+                            <h5>
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">Detalles personales</font>
+                                </font>
+                            </h5>
+                        </div>
+                        <div class="col-sm-3 text-right">
+                            <button class="btn btn-link pl-0 text-primary collapsed" type="button"
+                                data-toggle="collapse" data-target="#personalDetails" aria-expanded="false"
+                                aria-controls="personalDetails">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">Actualizar</font>
+                                </font>
+                            </button>
+                        </div>
+                    </div>
+                    <p class="text-sm text-muted"><i class="fa fa-id-card fa-fw mr-2"></i>
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">John Doe</font>
+                        </font><br><i class="fa fa-birthday-cake fa-fw mr-2"></i>
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">22/06/1980</font>
+                        </font><br><i class="fa fa-envelope-open fa-fw mr-2"></i>
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">john.doe@directory.com </font>
+                        </font><span class="mx-2">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">|</font>
+                            </font>
+                        </span> <i class="fa fa-phone fa-fw mr-2"></i>
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">+42055544466</font>
+                        </font>
+                    </p>
+                    <div class="collapse" id="personalDetails">
+                        <form action="#">
+                            <div class="row pt-4">
+                                <div class="form-group col-md-6">
+                                    <label class="form-label" for="name">Name</label>
+                                    <input class="form-control" type="text" name="name" id="name" value="John Doe">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="form-label" for="date">Date of birth</label>
+                                    <input class="form-control" type="text" name="date" id="date" value="06/22/1980">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="form-label" for="email">Email address</label>
+                                    <input class="form-control" type="email" name="email" id="email"
+                                        value="john.doe@directory.com">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="form-label" for="phone">Phone number</label>
+                                    <input class="form-control" type="text" name="phone" id="phone"
+                                        value="+42055544466">
+                                </div>
+                            </div>
+                            <button class="btn btn-outline-primary mb-4" type="submit">Save your personal
+                                details</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="text-block">
+                    <div class="row mb-3">
+                        <div class="col-sm-9">
+                            <h5>
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">Direccion</font>
+                                </font>
+                            </h5>
+                        </div>
+                        <div class="col-sm-3 text-right">
+                            <button class="btn btn-link pl-0 text-primary collapsed" type="button"
+                                data-toggle="collapse" data-target="#address" aria-expanded="false"
+                                aria-controls="address">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">Cambio</font>
+                                </font>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="media text-sm text-muted"> <i class="fa fa-address-book fa-fw mr-2"></i>
+                        <div class="media-body mt-n1">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">123 Main St., Apt # 7 </font>
+                            </font><br>
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">San Francisco, CA, 902 10</font>
+                            </font>
+                        </div>
+                    </div>
+                    <div class="collapse" id="address">
+                        <form action="#">
+                            <div class="row pt-4">
+                                <div class="form-group col-md-6">
+                                    <label class="form-label" for="street">Dirrecion</label>
+                                    <input class="form-control" type="text" name="street" id="street"
+                                        value="123 Main St.">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="form-label" for="apt">Barrio. (opcional)</label>
+                                    <input class="form-control" type="text" name="apt" id="apt" value="Apt #7">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="form-label" for="city">Ciudad</label>
+                                    <input class="form-control" type="text" name="city" id="city" value="San Francisco">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="form-label" for="state">Departamento</label>
+                                    <div class="dropdown bootstrap-select form-control">
+                                        <select class="selectpicker form-control" name="state" id="state"
+                                            data-style="btn-selectpicker" tabindex="-98">
+                                            <option value="state_0">Alabama </option>
+                                            <option value="state_1">Alaska </option>
+                                            <option value="state_2">Arizona </option>
+                                            <option value="state_3">Arkansas </option>
+                                            <option value="state_4" selected="">California </option>
+                                            <option value="state_5">Colorado </option>
+                                            <option value="state_6">Connecticut </option>
+                                            <option value="state_7">Delaware </option>
+                                            <option value="state_8">Florida </option>
+                                            <option value="state_9">Georgia </option>
+                                            <option value="state_10">Hawaii </option>
+                                            <option value="state_11">Idaho </option>
+                                            <option value="state_12">Illinois </option>
+                                            <option value="state_13">Indiana </option>
+                                            <option value="state_14">Iowa </option>
+                                            <option value="state_15">Kansas </option>
+                                            <option value="state_16">Kentucky </option>
+                                            <option value="state_17">Louisiana </option>
+                                            <option value="state_18">Maine </option>
+                                            <option value="state_19">Maryland </option>
+                                            <option value="state_20">Massachusetts </option>
+                                            <option value="state_21">Michigan </option>
+                                            <option value="state_22">Minnesota </option>
+                                            <option value="state_23">Mississippi </option>
+                                            <option value="state_24">Missouri </option>
+                                            <option value="state_25">Montana </option>
+                                            <option value="state_26">Nebraska </option>
+                                            <option value="state_27">Nevada </option>
+                                            <option value="state_28">New Hampshire </option>
+                                            <option value="state_29">New Jersey </option>
+                                            <option value="state_30">New Mexico </option>
+                                            <option value="state_31">New York </option>
+                                            <option value="state_32">North Carolina </option>
+                                            <option value="state_33">North Dakota </option>
+                                            <option value="state_34">Ohio </option>
+                                            <option value="state_35">Oklahoma </option>
+                                            <option value="state_36">Oregon </option>
+                                            <option value="state_37">Pennsylvania </option>
+                                            <option value="state_38">Rhode Island </option>
+                                            <option value="state_39">South Carolina </option>
+                                            <option value="state_40">South Dakota </option>
+                                            <option value="state_41">Tennessee </option>
+                                            <option value="state_42">Texas </option>
+                                            <option value="state_43">Utah </option>
+                                            <option value="state_44">Vermont </option>
+                                            <option value="state_45">Virginia </option>
+                                            <option value="state_46">Washington </option>
+                                            <option value="state_47">West Virginia </option>
+                                            <option value="state_48">Wisconsin </option>
+                                            <option value="state_49">Wyoming </option>
+                                        </select>
+                                        <button type="button" class="btn dropdown-toggle btn-selectpicker"
+                                            data-toggle="dropdown" role="combobox" aria-owns="bs-select-1"
+                                            aria-haspopup="listbox" aria-expanded="false" data-id="state"
+                                            title="California">
+                                            <div class="filter-option">
+                                                <div class="filter-option-inner">
+                                                    <div class="filter-option-inner-inner">California</div>
+                                                </div>
+                                            </div>
+                                        </button>
+                                        <div class="dropdown-menu ">
+                                            <div class="inner show" role="listbox" id="bs-select-1" tabindex="-1">
+                                                <ul class="dropdown-menu inner show" role="presentation"></ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="form-label" for="zip">Codigo postal</label>
+                                    <input class="form-control" type="text" name="zip" id="zip" value="902 10">
+                                </div>
+                            </div>
+                            <button class="btn btn-outline-primary">Guardar dirrecion</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 ml-lg-auto">
+                <div class="card border-0 shadow">
+                    <div class="card-header bg-primary-light py-4 border-0">
+                        <div class="media align-items-center">
+                            <div class="media-body">
+                                <h4 class="h6 subtitle text-sm text-primary">
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">¿Qué información se comparte con los
+                                            demás?</font>
+                                    </font>
+                                </h4>
+                            </div>
+                            <svg class="svg-icon svg-icon svg-icon-light w-3rem h-3rem ml-3 text-primary">
+                                <use xlink:href="#identity-1"> </use>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="card-body p-4">
+                        <p class="text-muted text-sm card-text">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">El directorio solo publica la información de
+                                    contacto de los anfitriones e invitados </font>
+                            </font><strong>
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">después de que se confirma la reserva</font>
+                                </font>
+                            </strong>
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;"> .</font>
+                            </font>
+                        </p>
+                        <p class="text-muted text-sm card-text">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">Amet nisi eiusmod minim commodo sit voluptate
+                                    aute ut quis ea veniam sunt proident ex. </font>
+                                <font style="vertical-align: inherit;">Ejercicio </font>
+                            </font><strong>
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">culpa laboris</font>
+                                </font>
+                            </strong>
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;"> consequat fugiat non ipsum veniam Lorem aliqua
+                                    deserunt tempor elit veniam.</font>
+                            </font>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    
+{% endblock  %}
+    

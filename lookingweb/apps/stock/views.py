@@ -1,8 +1,15 @@
-from django.shortcuts import render
-from django.views.generic import TemplateView
+from django.db                import reset_queries
+from django.shortcuts         import render       , redirect
+from django.urls              import reverse_lazy
+from django.http              import HttpResponseRedirect
+from django.views    .generic import TemplateView
+
 
 # Create your views here.
 
+
+class WarningView(TemplateView):
+    template_name = "account/aviso.html"
 
 class AddPropertyView(TemplateView):
     template_name = "add/add-property.html"
