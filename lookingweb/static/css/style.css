@@ -343,6 +343,16 @@ a:hover {
 
 /*------/ Owl carousel /------*/
 
+div.rd-size {
+    height: 11cm;
+    background-size: cover;
+}
+
+div.rd-size-2 {
+    height: 10cm;
+    background-size: cover;
+}
+
 .owl-theme .owl-dots {
     text-align: center;
     margin-top: 18px;
@@ -1017,7 +1027,12 @@ a:hover {
 /*======================================
 //--//-->   CARD GENERAL
 ======================================*/
-
+.img-a {
+    background: cover;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
 .card-box-a,
 .card-box-b,
 .card-box-d {
@@ -1332,6 +1347,21 @@ a:hover {
 //--//-->   SERVICES - CARD-C
 ======================================*/
 
+@media (max-width: 375px){
+    .col-md-4{
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 411px) and (min-width: 376px){
+    .col-md-4{
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
 .card-box-c {
     position: relative;
 }
@@ -2224,3 +2254,9 @@ svg:not(:root) {
     color: white !important;
 }
 
+.radius-r {
+    border-radius: 23px 23px 23px 23px;
+    -moz-border-radius: 23px 23px 23px 23px;
+    -webkit-border-radius: 23px 23px 23px 23px;
+    border: 0px solid #000000;
+}

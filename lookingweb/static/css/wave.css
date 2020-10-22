@@ -2,11 +2,14 @@
 
 body {
   font-family: Lato, sans-serif;
-  --col-deepblue: #ffd166;
+  --col-white: #ffffff;
+  --col-yellow: #ffd166;
+  --col-green: #06d6a0;
+  --col-blue: #118ab2;
 }
 
 #Demowaves {
-    height: auto;
+    height: cover;
     position: relative;;
     bottom: 120px;
 }
@@ -53,10 +56,10 @@ svg {
   fill: #ffff;
 }
 .drop {
-  fill: var(--col-deepblue);
+  fill: var(--col-white);
   xfill: #99000055;
   animation: drop 3.2s linear infinite normal;
-  stroke: var(--col-deepblue);
+  stroke: var(--col-white);
   stroke-width: 0.5;
   transform: translateY(25px);
   transform-box: fill-box;
@@ -65,10 +68,12 @@ svg {
 .drop1 {
 }
 .drop2 {
+  fill: var(--col-yellow);
   animation-delay: 3s;
   animation-duration: 3s;
 }
 .drop3 {
+  fill: var(--col-green);
   animation-delay: -2s;
   animation-duration: 3.4s;
 }
@@ -76,6 +81,7 @@ svg {
   animation-delay: 1.7s;
 }
 .drop5 {
+  fill: var(--col-blue);
   animation-delay: 2.7s;
   animation-duration: 3.1s;
 }

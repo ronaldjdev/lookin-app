@@ -4995,14 +4995,6 @@ input[type="button"].btn-block {
     padding: 1.25rem
 }
 
-
-@media (min-width: 768px)
-.col-md-4 {
-    -ms-flex: 0 0 33.333333%;
-    flex: 0 0 33.333333%;
-    max-width: 33.333333%;
-}
-
 .card-title {
     margin-bottom: .75rem
 }
