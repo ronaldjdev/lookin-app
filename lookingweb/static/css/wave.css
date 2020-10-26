@@ -11,7 +11,7 @@ body {
 #Demowaves {
     height: cover;
     position: relative;;
-    bottom: 120px;
+    bottom: 140px;
 }
 
 @media (max-width: 575px ) and (min-width: 415px) {
@@ -51,49 +51,13 @@ svg {
   padding: 0%;
 }
 .wave {
-  animation: wave 3s linear;
-  animation-iteration-count: infinite;
+  animation: wave 5s linear;
+  animation-iteration-count: 5s;
   fill: #ffff;
 }
-.drop {
-  fill: var(--col-white);
-  xfill: #99000055;
-  animation: drop 3.2s linear infinite normal;
-  stroke: var(--col-white);
-  stroke-width: 0.5;
-  transform: translateY(25px);
-  transform-box: fill-box;
-  transform-origin: 50% 100%;
-}
-.drop1 {
-}
-.drop2 {
-  fill: var(--col-yellow);
-  animation-delay: 3s;
-  animation-duration: 3s;
-}
-.drop3 {
-  fill: var(--col-green);
-  animation-delay: -2s;
-  animation-duration: 3.4s;
-}
-.drop4 {
-  animation-delay: 1.7s;
-}
-.drop5 {
-  fill: var(--col-blue);
-  animation-delay: 2.7s;
-  animation-duration: 3.1s;
-}
-.drop6 {
-  animation-delay: -2.1s;
-  animation-duration: 3.2s;
-}
-.gooeff {
-  filter: url(#goo);
-}
+
 #wave2 {
-  animation-duration: 5s;
+  animation-duration: 6s;
   animation-direction: reverse;
   opacity: 0.6;
 }
@@ -101,23 +65,7 @@ svg {
   animation-duration: 7s;
   opacity: 0.3;
 }
-@keyframes drop {
-  0% {
-    transform: translateY(25px);
-  }
-  30% {
-    transform: translateY(-10px) scale(0.1);
-  }
-  30.001% {
-    transform: translateY(25px) scale(1);
-  }
-  70% {
-    transform: translateY(25px);
-  }
-  100% {
-    transform: translateY(-10px) scale(0.1);
-  }
-}
+
 @keyframes wave {
   to {
     transform: translateX(-100%);
