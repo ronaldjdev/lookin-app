@@ -26,9 +26,18 @@ $(window).scroll(function () {
 
 $(window).scroll(function () {
     if ($(document).scrollTop() > 50) {
-        $('.navbar-toggler span').addClass('affix-navbar-toggler span');
+        $('.justifyButton').addClass('justifyButton-2');
         console.log("OK");
     } else {
-        $('.navbar-toggler span').removeClass('affix-navbar-toggler span');
+        $('.justifyButton').removeClass('justifyButton-2');
+    }
+});
+
+$(window).scroll(function () {
+    if ($(document).scrollTop() > 50) {
+        $('#changeLogo').attr('src','static/img/LookingHome.png');
+        console.log("OK");
+    } else {
+        $('#changeLogo').attr('src','static/img/Looking-3-white.png');
     }
 });

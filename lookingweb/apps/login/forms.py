@@ -1,5 +1,5 @@
 from django import forms
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth.forms import AuthenticationForm
 from apps.user.models import Usuarios
 
 # Formulario de inicio de sesion
@@ -36,8 +36,8 @@ class RegistryForms (forms.ModelForm):
                         ))
 
         class Meta:
-                model= Usuarios
-                fields=[
+                model  = Usuarios
+                fields =[
                         'firstName',
                         'lastName',
                         'numIden',
@@ -49,7 +49,7 @@ class RegistryForms (forms.ModelForm):
                         'address',
                         'address2',
                 ]
-                labels={
+                labels ={
                         'firstName':'Nombres:',
                         'lastName':'Apellidos:',
                         'numIden':'N° de identifiacion:',
@@ -118,7 +118,8 @@ class RegistryForms (forms.ModelForm):
                                 attrs ={
                                         'class':'selectpicker show-tick',
                                         'placeholder':'Departamentos',
-                                        'id':'depart'
+                                        'id':'depart',
+                                        'data-size':'5',
                                 }
                         ),
                         'address':forms.TextInput(

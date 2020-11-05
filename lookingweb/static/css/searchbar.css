@@ -221,3 +221,8 @@
   border-bottom-right-radius: 5rem !important;
   border-top-right-radius: 5rem !important;
 }
+
+.fade {
+  transition: opacity 0.15s linear
+}
+

@@ -52,7 +52,7 @@ svg {
 }
 .wave {
   animation: wave 5s linear;
-  animation-iteration-count: 5s;
+  animation-iteration-count: 5s infinite normal;
   fill: #ffff;
 }
 

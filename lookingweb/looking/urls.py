@@ -15,31 +15,31 @@ Including another URLconf
 """
 
 
-from django.contrib import admin
-from django.urls import path
-from django.contrib.auth.decorators import login_required  
-from apps.home.views import *
-from apps.login.views import *
-from apps.stock.views import *
+from django.contrib                 import admin
+from django.urls                    import path
+from django.contrib.auth.decorators import login_required
+from apps  .home   .views           import *
+from apps  .login  .views           import *
+from apps  .stock  .views           import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     # Home
-    path('', IndexView.as_view(), name= 'index' ),
-    path('index', IndexView.as_view(), name= 'index' ),
+    path(''     , IndexCreateView.as_view(), name= 'index' ),
+    path('index', IndexCreateView.as_view(), name= 'index' ),
     # Info
-    path('about', AboutView.as_view(), name= 'about'),
+    path('about'  , AboutView  .as_view(), name= 'about'  ),
     path('contact', ContactView.as_view(), name= 'contact'),
     # Account
-    path('login', LoginView.as_view(), name= 'login'),
-    path('logout', login_required(logout_page), name= 'logout'),
-    path('account', login_required(AccountView.as_view()), name= 'account'),
-    path('sign-in', RegistrarUsuarios.as_view(), name= 'sign-in'),
+    path('login'  , LoginView        .as_view    (         ), name= 'login'  ),
+    path('logout' , login_required   (logout_page          ), name= 'logout' ),
+    path('account', login_required   (AccountView.as_view()), name= 'account'),
+    path('sign-in', RegistrarUsuarios.as_view    (         ), name= 'sign-in'),
     # User Personal Edit
     path('user-personal', UserUpdateView.as_view(), name= 'user-personal'),
     # Property
-    path('warning'  , WarningView .as_view(), name= 'warning'  ),
-    path('add-property'  , AddPropertyView .as_view(), name= 'add-property'  ),
+    path('warning'      , WarningView     .as_view(), name= 'warning'      ),
+    path('add-property' , AddPropertyView .as_view(), name= 'add-property' ),
     path('add-property-1', login_required(AddPropertyView1.as_view()), name= 'add-property-1'),
     path('add-property-2', login_required(AddPropertyView2.as_view()), name= 'add-property-2'),
     path('add-property-3', login_required(AddPropertyView3.as_view()), name= 'add-property-3'),

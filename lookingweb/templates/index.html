@@ -1,8 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load compress %}
 {% block title %}Inicio {% endblock %}
 {% block style %}
 <link rel="stylesheet" href="{% static 'css/searchbar.css' %}">
+<link rel="stylesheet" href="{% static 'css/slider.css' %}">
 {% endblock  %}
 {% block content %}
 <!--/ Image Presentation Start /-->
@@ -27,6 +29,7 @@
         </p>
       </div>
     </div>
+    <!--/ Barra de busqueda Start /-->
     <div class="container position-relative mt-n6">
       <ul class="nav nav-tabs search-bar-nav-tabs" role="tablist">
         <li class="nav-item mr-2">
@@ -57,31 +60,68 @@
           </a>
         </li>
       </ul>
-      <div class="radius-rj search-bar search-bar-with-tabs p-3 p-lg-4 ">
+      <div class="search-bar search-bar-with-tabs p-3 p-lg-4">
         <div class="tab-content">
-          <div class="tab-pane fade active " id="alquiler" role="tabpanel">
-            <form action="#">
+          <div class="tab-pane fade active show" id="buy" role="tabpanel">
+            <form action="#" method="get">
               <div class="row">
-                <div class="col-lg-4 d-flex align-items-center form-group no-divider">
-                  
+                <div class="col-lg-3 d-flex align-items-center form-group no-divider no-margin">
+                  <div class="dropdown bootstrap-select show-tick form-control">
+                    {{form.departProperty}}
+                    <div class="dropdown-menu ">
+                      <div class="inner show" role="listbox" id="bs-select-1" tabindex="-1" aria-multiselectable="true">
+                        <ul class="dropdown-menu inner show" role="presentation"></ul>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div class="col-md-6 col-lg-3 d-flex align-items-center form-group no-divider">
-                  
+                <div class="col-lg-2 d-flex align-items-center form-group no-divider no-margin">
+                  <div class="dropdown bootstrap-select show-tick form-control">
+                    <input class="form-control" type="text" placeholder="Ingrese Ciudad">
+                    <div class="dropdown-menu ">
+                      <div class="inner show" role="listbox" id="bs-select-1" tabindex="-1" aria-multiselectable="true">
+                        <ul class="dropdown-menu inner show" role="presentation"></ul>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div class="col-md-6 col-lg-3 d-flex align-items-center form-group no-divider">
-                  
+                <div class="col-md-6 col-lg-3 d-flex align-items-center form-group no-divider no-margin">
+                  <div class="dropdown bootstrap-select show-tick">
+                    {{form.typeProperty}}
+                    <div class="dropdown-menu ">
+                      <div class="inner show" role="listbox" id="bs-select-2" tabindex="-1" aria-multiselectable="true">
+                        <ul class="dropdown-menu inner show" role="presentation"></ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-2 d-flex align-items-center form-group no-divider no-margin">
+                  <div class="col-12 col-md-6 col-lg-3">
+                    <div class="slider-range mb-15">
+                        <div class="range-price text-white">Price [30000 - 150000]$</div>
+                        <div class="slider-range-price ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" data-min="0" data-max="200000" data-unit="$" data-value-min="30000" data-value-max="150000" data-label-result="Price">
+                            <div class="ui-slider-range ui-widget-header ui-corner-all"></div>
+                            <span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0"></span>
+                            <span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0"></span>
+                        </div>
+                    </div>
+                </div>
                 </div>
                 <div class="col-lg-2 form-group mb-0">
-                  <button class="btn btn-outline-primary btn-block h-100 " style="border-radius: 5rem;" type="submit">Search </button>
+                  <button class="btn btn-primary btn-block radius-r h-100" type="submit">Search </button>
                 </div>
               </div>
             </form>
           </div>
         </div>
+        </form>
       </div>
     </div>
   </div>
+  </div>
+  </div>
 </section>
+
 <!--/ Image Presentation End /-->
 
 <!--/ Carousel Start /-->

@@ -1,0 +1,43 @@
+.slider-range {
+
+    .ui-widget-content {
+        border: none;
+        background: $dark2;
+
+        .ui-state-default {
+            background: $primary;
+            height: 14px;
+            width: 14px;
+            border: none;
+            border-radius: 50%;
+            top: 50%;
+            @include transform(translateY(-50%));
+        }
+    }
+
+    .ui-widget-header {
+        background: $primary;
+    }
+
+    .ui-slider-horizontal {
+        height: 4px;
+
+        .ui-slider-range {
+            border-radius: 0 !important;
+        }
+
+        .ui-slider-handle {
+            margin-left: 0;
+        }
+    }
+
+    .range-size {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .range-price {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+}

@@ -41,7 +41,7 @@ DJANGO_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
- 
+
 ]
 
 PROJECT_APPS = [
@@ -52,8 +52,12 @@ PROJECT_APPS = [
 
 ]
 
+THIRD_PARTY_APSS = [
+    ''
+]
 
-INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS 
+INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS + THIRD_PARTY_APSS
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
