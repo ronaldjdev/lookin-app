@@ -1,12 +1,60 @@
 {% extends 'base.html' %}
+
+{% block style %}
+<style>
+    .svg-icon.svg-icon-light {
+        stroke-width: 2;
+    }
+
+    .svg-icon {
+        width: 18px;
+        height: 18px;
+        vertical-align: text-bottom;
+        stroke: currentColor;
+        stroke-width: 3;
+        --layer1: currentColor;
+        --layer2: currentColor;
+    }
+
+    .text-primary {
+        color: #e63946!important;
+    }
+
+    .ml-3,
+    .mx-3 {
+        margin-left: 1rem !important;
+    }
+
+    .h-3rem {
+        height: 3rem !important;
+    }
+
+    .w-3rem {
+        width: 3rem !important;
+    }
+
+    svg {
+        overflow: hidden;
+        vertical-align: middle;
+    }
+</style>
+{% endblock  %}
+
 {% block content %}
+<!--/ Image Nav bar Start /-->
+<section class="d-flex img-fluid-rj" style="background-image: url(static/img/bg/valley_illustration.png);">
+    <div class="container-fluid intro-bg ">
+    </div>
+</section>
+<!--/ Image Nav bar End /-->
+
 <!--/ Breadcrumb Star /-->
 <section class="intro-single">
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-lg-8">
                 <div class="title-single-box">
-                    <h1 class="title-single">Informacion personal</h1>
+                    <h1 class="title-single "> Informacion personal</h1>
                     <span class="color-text-a">Administra si informacion personal y configuracion aqui</span>
                 </div>
             </div>
@@ -17,7 +65,7 @@
                             <a href="index">Inicio</a>
                         </li>
                         <li class="breadcrumb-item">
-                            <a href="account">Cuenta</a>
+                            <a href="account">Cuenta de usuario</a>
                         </li>
                         <li class="breadcrumb-item active" aria-current="page">
                             Informacion personal
@@ -127,7 +175,7 @@
                         </div>
                     </div>
                     <div class="collapse" id="address">
-                        <form action="#">
+                        <form action="#" method="post">
                             <div class="row pt-4">
                                 <div class="form-group col-md-6">
                                     <label class="form-label" for="street">Dirrecion</label>
@@ -145,74 +193,7 @@
                                 <div class="form-group col-md-6">
                                     <label class="form-label" for="state">Departamento</label>
                                     <div class="dropdown bootstrap-select form-control">
-                                        <select class="selectpicker form-control" name="state" id="state"
-                                            data-style="btn-selectpicker" tabindex="-98">
-                                            <option value="state_0">Alabama </option>
-                                            <option value="state_1">Alaska </option>
-                                            <option value="state_2">Arizona </option>
-                                            <option value="state_3">Arkansas </option>
-                                            <option value="state_4" selected="">California </option>
-                                            <option value="state_5">Colorado </option>
-                                            <option value="state_6">Connecticut </option>
-                                            <option value="state_7">Delaware </option>
-                                            <option value="state_8">Florida </option>
-                                            <option value="state_9">Georgia </option>
-                                            <option value="state_10">Hawaii </option>
-                                            <option value="state_11">Idaho </option>
-                                            <option value="state_12">Illinois </option>
-                                            <option value="state_13">Indiana </option>
-                                            <option value="state_14">Iowa </option>
-                                            <option value="state_15">Kansas </option>
-                                            <option value="state_16">Kentucky </option>
-                                            <option value="state_17">Louisiana </option>
-                                            <option value="state_18">Maine </option>
-                                            <option value="state_19">Maryland </option>
-                                            <option value="state_20">Massachusetts </option>
-                                            <option value="state_21">Michigan </option>
-                                            <option value="state_22">Minnesota </option>
-                                            <option value="state_23">Mississippi </option>
-                                            <option value="state_24">Missouri </option>
-                                            <option value="state_25">Montana </option>
-                                            <option value="state_26">Nebraska </option>
-                                            <option value="state_27">Nevada </option>
-                                            <option value="state_28">New Hampshire </option>
-                                            <option value="state_29">New Jersey </option>
-                                            <option value="state_30">New Mexico </option>
-                                            <option value="state_31">New York </option>
-                                            <option value="state_32">North Carolina </option>
-                                            <option value="state_33">North Dakota </option>
-                                            <option value="state_34">Ohio </option>
-                                            <option value="state_35">Oklahoma </option>
-                                            <option value="state_36">Oregon </option>
-                                            <option value="state_37">Pennsylvania </option>
-                                            <option value="state_38">Rhode Island </option>
-                                            <option value="state_39">South Carolina </option>
-                                            <option value="state_40">South Dakota </option>
-                                            <option value="state_41">Tennessee </option>
-                                            <option value="state_42">Texas </option>
-                                            <option value="state_43">Utah </option>
-                                            <option value="state_44">Vermont </option>
-                                            <option value="state_45">Virginia </option>
-                                            <option value="state_46">Washington </option>
-                                            <option value="state_47">West Virginia </option>
-                                            <option value="state_48">Wisconsin </option>
-                                            <option value="state_49">Wyoming </option>
-                                        </select>
-                                        <button type="button" class="btn dropdown-toggle btn-selectpicker"
-                                            data-toggle="dropdown" role="combobox" aria-owns="bs-select-1"
-                                            aria-haspopup="listbox" aria-expanded="false" data-id="state"
-                                            title="California">
-                                            <div class="filter-option">
-                                                <div class="filter-option-inner">
-                                                    <div class="filter-option-inner-inner">California</div>
-                                                </div>
-                                            </div>
-                                        </button>
-                                        <div class="dropdown-menu ">
-                                            <div class="inner show" role="listbox" id="bs-select-1" tabindex="-1">
-                                                <ul class="dropdown-menu inner show" role="presentation"></ul>
-                                            </div>
-                                        </div>
+                                        {{form.depart}}
                                     </div>
                                 </div>
                                 <div class="form-group col-md-6">
@@ -237,19 +218,35 @@
                                     </font>
                                 </h4>
                             </div>
-                            <svg class="svg-icon svg-icon svg-icon-light w-3rem h-3rem ml-3 text-primary">
-                                <use xlink:href="#identity-1"> </use>
+                            <svg class="svg-icon svg-icon svg-icon-light w-3rem h-3rem ml-3 text-primary" style="">
+                                <use xlink:href="#identity-1">
+                                    <svg xmlns="" viewBox="0 0 64 64" id="identity-1">
+                                        <title>Identity</title>
+                                        <desc>A line styled icon from Orion Icon Library.</desc>
+                                        <path data-name="layer1"
+                                            d="M34 46.9c4-.9 4-2.3 4-3.3v-1.5a9.3 9.3 0 0 1-2.9-6.9v-4.5a7 7 0 0 1 13.9 0v4.5a9.3 9.3 0 0 1-3 6.9v1.5c0 .9 0 2.4 4.1 3.3S54 52 54 52H30a5.1 5.1 0 0 1 4-5.1z"
+                                            fill="none" stroke="#101010" stroke-miterlimit="10" stroke-linejoin="round"
+                                            stroke-linecap="round" style="stroke:var(--layer2, #101010)"></path>
+                                        <path data-name="layer2" fill="none" stroke="#101010" stroke-miterlimit="10"
+                                            d="M10 10H2v50h60V10h-8M26 24H10m10 8H10m14 8H10m8-30h28"
+                                            stroke-linejoin="round" stroke-linecap="round"
+                                            style="stroke:var(--layer2, #101010)"></path>
+                                        <path data-name="layer1" fill="none" stroke="#101010" stroke-miterlimit="10"
+                                            d="M10 4h8v12h-8zm36 0h8v12h-8z" stroke-linejoin="round"
+                                            stroke-linecap="round" style="stroke:var(--layer2, #101010)"></path>
+                                    </svg>
+                                </use>
                             </svg>
                         </div>
                     </div>
                     <div class="card-body p-4">
                         <p class="text-muted text-sm card-text">
                             <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">El directorio solo publica la información de
-                                    contacto de los anfitriones e invitados </font>
+                                <font style="vertical-align: inherit;">Looking solo publica la información de
+                                    contacto de los vendedores y roomies </font>
                             </font><strong>
                                 <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">después de que se confirma la reserva</font>
+                                    <font style="vertical-align: inherit;">después de que se confirma el anuncio publicitado</font>
                                 </font>
                             </strong>
                             <font style="vertical-align: inherit;">
@@ -277,6 +274,5 @@
         </div>
     </div>
 </section>
-    
+
 {% endblock  %}
-    

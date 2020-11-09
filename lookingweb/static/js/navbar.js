@@ -41,3 +41,4 @@ $(window).scroll(function () {
         $('#changeLogo').attr('src','static/img/Looking-3-white.png');
     }
 });
+

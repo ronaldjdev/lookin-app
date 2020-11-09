@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
-{% load compress %}
 {% block title %}Inicio {% endblock %}
 {% block style %}
 <link rel="stylesheet" href="{% static 'css/searchbar.css' %}">
 <link rel="stylesheet" href="{% static 'css/slider.css' %}">
+<script src="{% static 'js/searchbar.js' %}"></script>
 {% endblock  %}
 {% block content %}
 <!--/ Image Presentation Start /-->
@@ -45,7 +45,7 @@
           <a href="#compra" class="nav-link-1" data-toggle="tab" role="tab" aria-selected="false">
             <font style="vertical-align: inherit;">
               <font style="vertical-align: inherit;">
-                Compra
+                Venta
               </font>
             </font>
           </a>
@@ -60,65 +60,110 @@
           </a>
         </li>
       </ul>
-      <div class="search-bar search-bar-with-tabs p-3 p-lg-4">
-        <div class="tab-content">
-          <div class="tab-pane fade active show" id="buy" role="tabpanel">
+      <div class="search-bar search-bar-with-tabs radius-rj p-3 p-lg-4">
+        <div class="tab-content ">
+          <!--/ Form search alquiler Start /-->
+          <div class="tab-pane fade show active " id="alquiler" role="tabpanel" aria-labelledby="alquiler">
             <form action="#" method="get">
               <div class="row">
+                <div class="col-md-6 col-lg-3 d-flex align-items-center form-group no-divider no-margin">
+                  <div class="dropdown bootstrap-select selectpicker-50">
+                    {{form.typeProperty}}
+                  </div>
+                </div>
                 <div class="col-lg-3 d-flex align-items-center form-group no-divider no-margin">
-                  <div class="dropdown bootstrap-select show-tick form-control">
+                  <div class="dropdown bootstrap-select show-tick l">
                     {{form.departProperty}}
-                    <div class="dropdown-menu ">
-                      <div class="inner show" role="listbox" id="bs-select-1" tabindex="-1" aria-multiselectable="true">
-                        <ul class="dropdown-menu inner show" role="presentation"></ul>
-                      </div>
-                    </div>
                   </div>
                 </div>
                 <div class="col-lg-2 d-flex align-items-center form-group no-divider no-margin">
                   <div class="dropdown bootstrap-select show-tick form-control">
                     <input class="form-control" type="text" placeholder="Ingrese Ciudad">
-                    <div class="dropdown-menu ">
-                      <div class="inner show" role="listbox" id="bs-select-1" tabindex="-1" aria-multiselectable="true">
-                        <ul class="dropdown-menu inner show" role="presentation"></ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6 col-lg-3 d-flex align-items-center form-group no-divider no-margin">
-                  <div class="dropdown bootstrap-select show-tick">
-                    {{form.typeProperty}}
-                    <div class="dropdown-menu ">
-                      <div class="inner show" role="listbox" id="bs-select-2" tabindex="-1" aria-multiselectable="true">
-                        <ul class="dropdown-menu inner show" role="presentation"></ul>
-                      </div>
-                    </div>
                   </div>
                 </div>
                 <div class="col-md-6 col-lg-2 d-flex align-items-center form-group no-divider no-margin">
-                  <div class="col-12 col-md-6 col-lg-3">
-                    <div class="slider-range mb-15">
-                        <div class="range-price text-white">Price [30000 - 150000]$</div>
-                        <div class="slider-range-price ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" data-min="0" data-max="200000" data-unit="$" data-value-min="30000" data-value-max="150000" data-label-result="Price">
-                            <div class="ui-slider-range ui-widget-header ui-corner-all"></div>
-                            <span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0"></span>
-                            <span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0"></span>
-                        </div>
-                    </div>
-                </div>
+                  <div class="dropdown bootstrap-select">
+                    <select id="maxPrice" data-width="150px" class="selectpicker " title="Precio Max"
+                      data-style="btn-form-control" tabindex="-98">
+                      <option class="bs-title-option" value=""></option>
+                      <option value="price_0">$150,000</option>
+                      <option value="price_1">$350,000</option>
+                      <option value="price_2">$550,000</option>
+                      <option value="price_3">$+850,000</option>
+                    </select>
+                  </div>
                 </div>
                 <div class="col-lg-2 form-group mb-0">
-                  <button class="btn btn-primary btn-block radius-r h-100" type="submit">Search </button>
+                  <button class="btn btn-primary btn-block radius-r h-100" type="submit">¡Vamos! </button>
                 </div>
               </div>
             </form>
           </div>
+          <!--/ Form search alquiler End /-->
+
+          <!--/ Form search compra Start/-->
+          <div class="tab-pane fade" id="compra" role="tabpanel" aria-labelledby="compra">
+            <form action="#" method="get">
+              <div class="row">
+                <div class="col-md-6 col-lg-3 d-flex align-items-center form-group no-divider no-margin">
+                  <div class="dropdown bootstrap-select show-tick">
+                    {{form.typeProperty}}
+                  </div>
+                </div>
+                <div class="col-lg-3 d-flex align-items-center form-group no-divider no-margin">
+                  <div class="dropdown bootstrap-select show-tick form-control">
+                    {{form.departProperty}}
+                  </div>
+                </div>
+                <div class="col-lg-2 d-flex align-items-center form-group no-divider no-margin">
+                  <div class="dropdown bootstrap-select show-tick form-control">
+                    <input class="form-control" type="text" placeholder="Ingrese Ciudad">
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-2 d-flex align-items-center form-group no-divider no-margin">
+                  <div class="dropdown bootstrap-select selectpicker-50">
+                    <select id="maxPrice" data-width="150px" class="selectpicker  " title="Precio Max"
+                      data-style="btn-form-control" tabindex="-98">
+                      <option class="bs-title-option" value=""></option>
+                      <option value="price_0">$150,000</option>
+                      <option value="price_1">$350,000</option>
+                      <option value="price_2">$550,000</option>
+                      <option value="price_3">$+850,000</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-lg-2 form-group mb-0">
+                  <button class="btn btn-primary btn-block radius-r h-100" type="submit">¡Vamos! </button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <!--/ Form search compra End/-->
+
+          <!--/ Form search roommate Start/-->
+          <div class="tab-pane fade " id="roommate" role="tabpanel" aria-labelledby="roommate">
+            <form action="#" method="get">
+              <div class="row">
+                <div class="col-lg-4 d-flex align-items-center form-group no-divider no-margin">
+                  <div class="dropdown bootstrap-select show-tick form-control">
+                    {{form.departProperty}}
+                  </div>
+                </div>
+                <div class="col-lg-4 d-flex align-items-center form-group no-divider no-margin">
+                  <div class="dropdown bootstrap-select show-tick form-control">
+                    <input class="form-control" type="text" placeholder="Ingrese Ciudad">
+                  </div>
+                </div>
+                <div class="col-lg-2 form-group mb-0">
+                  <button class="btn btn-primary btn-block radius-r h-100" type="submit">¡Vamos! </button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <!--/ Form search roommate End/-->
         </div>
-        </form>
       </div>
     </div>
-  </div>
-  </div>
   </div>
 </section>
 
@@ -212,7 +257,7 @@
 
 <!-- Bienvenido Start -->
 {% if request.user.is_authenticated %}
-<section class="welcome section-t8">
+<section class="welcome section-t3">
   <div class="container-fluid container-rojo " data-target="#wave">
     <div class="row">
       <div class="col-md-12">
@@ -266,8 +311,8 @@
       <div class="col-md-12">
         <div class="title-wrap d-flex justify-content-between">
           <div class="title-box">
-            <p class="subtitle text-secondary-2" style="color: white;">Conoce</p>
-            <h2 class="title-a" style="color: white;">Nuestros Servicios</h2>
+            <p class="subtitle text-secondary-2" style="color: white;">¿Porque nosotros?</p>
+            <h2 class="title-a" style="color: white;">Conoce nuestros servicios</h2>
           </div>
         </div>
       </div>
@@ -320,7 +365,7 @@
                 <span class="fas fa-ad"></span>
               </div>
               <h2 class="card-title mb-3 text-dark">Anuncios</h2></a>
-              <p class="text-muted card-text text-sm">Publicita tus imbuebles y terrenos. </p>
+              <p class="text-muted card-text text-sm">Publicita tus inmuebles y terrenos. </p>
               <p class="collapse text-muted card-text text-sm" id="expAnuncios">
                 La cantidad de inmuebles es ilimitada, ¡claro! previamente verificados.</p>
               <a href="#" class=" link-c link-icon" data-toggle="collapse" data-target="#expAnuncios"
@@ -422,14 +467,14 @@
 <!--/ Sing In End /-->
 
 <!--/ Property Start /-->
-<section class="section-property section-t8">
+<section class="section-property section-t3">
   <div class="container-fluid shadow-lg espaciado" style="background: #f9c74f;">
     <div class="row">
       <div class="col-md-12">
         <div class="title-wrap d-flex justify-content-between">
           <div class="title-box">
             <p class="subtitle text-secondary-2" style="color: white;">Observa nuestros</p>
-            <h2 class="title-a" style="color: white;">Ultimos Inmuebles</h2>
+            <h2 class="title-a" style="color: white;">Inmuebles destacados</h2>
           </div>
           <div class="title-link">
             <a href="property-grid" style="color: white;">Todos los Inmuebles
@@ -637,7 +682,7 @@
 <!--/ Property End /-->
 
 <!--/ Agents Start /-->
-<section class="section-agents section-t8">
+<section class="section-agents section-t3">
   <div class="container-fluid shadow-lg espaciado">
     <div class="col-md-12">
       <div class="title-wrap d-flex justify-content-between">
@@ -834,8 +879,8 @@
 <!--/ Agents End /-->
 
 <!--/ News Start /-->
-<section class="section-news section-t8">
-  <div class="container">
+<section class="section-news section-t3">
+  <div class="container-fluid shadow-lg espaciado">
     <div class="row">
       <div class="col-md-12">
         <div class="title-wrap d-flex justify-content-between">
@@ -850,94 +895,92 @@
         </div>
       </div>
     </div>
-    <div id="new-carousel" class="owl-carousel owl-theme">
-      <div class="carousel-item-c">
-        <div class="card-box-b card-shadow news-box">
-          <div class="img-box-b">
-            <img src="static/img/post-2.jpg" alt="" class="img-b img-fluid" />
-          </div>
-          <div class="card-overlay">
-            <div class="card-header-b">
-              <div class="card-category-b">
-                <a href="#" class="category-b">Hogar</a>
-              </div>
-              <div class="card-title-b">
-                <h2 class="title-2">
-                  <a href="blog-single">Nuevos diseños de interiores <br />
-                    Noticias</a>
-                </h2>
-              </div>
-              <div class="card-date">
-                <span class="date-b">05 Sep. 2020</span>
+    <div class="container">
+      <div id="new-carousel" class="owl-carousel owl-theme">
+        <div class="carousel-it em-c ">
+          <div class="card-box-b card-shadow news-box radius-r">
+            <div class="img-box-b">
+              <img src="static/img/post-2.jpg" alt="" class="img-b img-fluid" />
+            </div>
+            <div class="card-overlay radius-r">
+              <div class="card-header-b">
+                <div class="card-category-b">
+                  <a href="#" class="category-b">Hogar</a>
+                </div>
+                <div class="card-title-b">
+                  <h2 class="title-2">
+                    <a href="blog-single">Noticias <br> Diseños de interiores </a>
+                  </h2>
+                </div>
+                <div class="card-date">
+                  <span class="date-b">05 Sep. 2020</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="carousel-item-c">
-        <div class="card-box-b card-shadow news-box">
-          <div class="img-box-b">
-            <img src="static/img/post-5.jpg" alt="" class="img-b img-fluid" />
-          </div>
-          <div class="card-overlay">
-            <div class="card-header-b">
-              <div class="card-category-b">
-                <a href="#" class="category-b">Viajes</a>
-              </div>
-              <div class="card-title-b">
-                <h2 class="title-2">
-                  <a href="blog-single">Nuevos planes de hospedaje <br />
-                    Noticias</a>
-                </h2>
-              </div>
-              <div class="card-date">
-                <span class="date-b">05 Sep. 2020</span>
+        <div class="carousel-item-c">
+          <div class="card-box-b card-shadow news-box radius-r">
+            <div class="img-box-b">
+              <img src="static/img/post-5.jpg" alt="" class="img-b img-fluid" />
+            </div>
+            <div class="card-overlay radius-r">
+              <div class="card-header-b ">
+                <div class="card-category-b">
+                  <a href="#" class="category-b">Viajes</a>
+                </div>
+                <div class="card-title-b">
+                  <h2 class="title-2">
+                    <a href="blog-single">Noticias <br> Planes de hospedaje </a>
+                  </h2>
+                </div>
+                <div class="card-date">
+                  <span class="date-b">05 Sep. 2020</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="carousel-item-c">
-        <div class="card-box-b card-shadow news-box">
-          <div class="img-box-b">
-            <img src="static/img/post-7.jpg" alt="" class="img-b img-fluid" />
-          </div>
-          <div class="card-overlay">
-            <div class="card-header-b">
-              <div class="card-category-b">
-                <a href="#" class="category-b">Parques</a>
-              </div>
-              <div class="card-title-b">
-                <h2 class="title-2">
-                  <a href="blog-single">Acercate al parque <br />
-                    Noticias</a>
-                </h2>
-              </div>
-              <div class="card-date">
-                <span class="date-b">05 Sep. 2020</span>
+        <div class="carousel-item-c">
+          <div class="card-box-b card-shadow news-box radius-r">
+            <div class="img-box-b">
+              <img src="static/img/post-7.jpg" alt="" class="img-b img-fluid" />
+            </div>
+            <div class="card-overlay radius-r">
+              <div class="card-header-b">
+                <div class="card-category-b">
+                  <a href="#" class="category-b">Arquitectura</a>
+                </div>
+                <div class="card-title-b">
+                  <h2 class="title-2">
+                    <a href="blog-single">Noticias <br> Diseños alucinantes</a>
+                  </h2>
+                </div>
+                <div class="card-date">
+                  <span class="date-b">05 Sep. 2020</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="carousel-item-c">
-        <div class="card-box-b card-shadow news-box">
-          <div class="img-box-b">
-            <img src="static/img/post-3.jpg" alt="" class="img-b img-fluid" />
-          </div>
-          <div class="card-overlay">
-            <div class="card-header-b">
-              <div class="card-category-b">
-                <a href="#" class="category-b">Viajes</a>
-              </div>
-              <div class="card-title-b">
-                <h2 class="title-2">
-                  <a href="#">Explora, vive nuevas experiencias <br />
-                    Noticias</a>
-                </h2>
-              </div>
-              <div class="card-date">
-                <span class="date-b">05 Sep. 2020</span>
+        <div class="carousel-item-c">
+          <div class="card-box-b card-shadow news-box radius-r">
+            <div class="img-box-b">
+              <img src="static/img/post-3.jpg" alt="" class="img-b img-fluid " />
+            </div>
+            <div class="card-overlay radius-r">
+              <div class="card-header-b">
+                <div class="card-category-b">
+                  <a href="#" class="category-b">Viajes</a>
+                </div>
+                <div class="card-title-b">
+                  <h2 class="title-2">
+                    <a href="#">Explora, vive nuevas experiencias </a>
+                  </h2>
+                </div>
+                <div class="card-date">
+                  <span class="date-b">05 Sep. 2020</span>
+                </div>
               </div>
             </div>
           </div>
@@ -949,8 +992,8 @@
 <!--/ News End /-->
 
 <!--/ Testimonials Start /-->
-<section class="section-testimonials section-t8 nav-arrow-a">
-  <div class="container">
+<section class="section-testimonials section-t3 nav-arrow-a">
+  <div class="container-fluid shadow-lg espaciado">
     <div class="row">
       <div class="col-md-12">
         <div class="title-wrap d-flex justify-content-between">
@@ -960,48 +1003,50 @@
         </div>
       </div>
     </div>
-    <div id="testimonial-carousel" class="owl-carousel owl-arrow">
-      <div class="carousel-item-a">
-        <div class="testimonials-box">
-          <div class="row">
-            <div class="col-sm-12 col-md-6">
-              <div class="testimonial-img">
-                <img src="static/img/testimonial-1.jpg" alt="" class="img-fluid" />
+    <div class="container">
+      <div id="testimonial-carousel" class="owl-carousel owl-arrow">
+        <div class="carousel-item-a">
+          <div class="testimonials-box">
+            <div class="row">
+              <div class="col-sm-12 col-md-6 radius-r">
+                <div class="testimonial-img radius-r">
+                  <img src="static/img/testimonial-1.jpg" alt="" class="img-fluid radius-r" />
+                </div>
               </div>
-            </div>
-            <div class="col-sm-12 col-md-6">
-              <div class="testimonial-ico">
-                <span class="ion-ios-quote"></span>
-              </div>
-              <div class="testimonials-content">
-                <p class="testimonial-text">Son una gran compañia</p>
-              </div>
-              <div class="testimonial-author-box">
-                <img src="static/img/mini-testimonial-1.jpg" alt="" class="testimonial-avatar" />
-                <h5 class="testimonial-author">Alberto & Erika</h5>
+              <div class="col-sm-12 col-md-6">
+                <div class="testimonial-ico">
+                  <span class="ion-ios-quote"></span>
+                </div>
+                <div class="testimonials-content radius-r">
+                  <p class="testimonial-text radius-r">Son una gran compañia</p>
+                </div>
+                <div class="testimonial-author-box">
+                  <img src="static/img/mini-testimonial-1.jpg" alt="" class="testimonial-avatar" />
+                  <h5 class="testimonial-author">Alberto & Erika</h5>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="carousel-item-a">
-        <div class="testimonials-box">
-          <div class="row">
-            <div class="col-sm-12 col-md-6">
-              <div class="testimonial-img">
-                <img src="static/img/testimonial-2.jpg" alt="" class="img-fluid" />
+        <div class="carousel-item-a">
+          <div class="testimonials-box">
+            <div class="row">
+              <div class="col-sm-12 col-md-6 radius-r">
+                <div class="testimonial-img radius-r">
+                  <img src="static/img/testimonial-2.jpg" alt="" class="img-fluid radius-r" />
+                </div>
               </div>
-            </div>
-            <div class="col-sm-12 col-md-6">
-              <div class="testimonial-ico">
-                <span class="ion-ios-quote"></span>
-              </div>
-              <div class="testimonials-content">
-                <p class="testimonial-text">Muy buena atencion</p>
-              </div>
-              <div class="testimonial-author-box">
-                <img src="static/img/mini-testimonial-2.jpg" alt="" class="testimonial-avatar" />
-                <h5 class="testimonial-author">Carlos & Maria</h5>
+              <div class="col-sm-12 col-md-6">
+                <div class="testimonial-ico">
+                  <span class="ion-ios-quote"></span>
+                </div>
+                <div class="testimonials-content ">
+                  <p class="testimonial-text radius-r">Muy buena atencion</p>
+                </div>
+                <div class="testimonial-author-box">
+                  <img src="static/img/mini-testimonial-2.jpg" alt="" class="testimonial-avatar" />
+                  <h5 class="testimonial-author">Carlos & Maria</h5>
+                </div>
               </div>
             </div>
           </div>

@@ -226,3 +226,9 @@
   transition: opacity 0.15s linear
 }
 
+
+.selectpicker-50 {
+  background-color: white !important;
+  color: #e63946 !important;
+}
+

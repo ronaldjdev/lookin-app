@@ -43,27 +43,26 @@ def logout_page(request):
     logout(request)
     return HttpResponseRedirect ('login')
 
-# Restablecer contraseña
-
-
-class ResetPassword(TemplateView):
-    template_name = "reset_password.html"
-
-
-# Vista de precios
-
-class PricingView(TemplateView):
-    template_name = "pricing.html"
-
-
-
-
 # Registros de usuarios 
 class RegistrarUsuarios (CreateView):
     model = Usuarios
     form_class = RegistryForms
     template_name = 'account/registro_form.html'
     success_url = reverse_lazy('index')
+
+
+# Restablecer contraseña
+class ResetPassword(TemplateView):
+    template_name = "reset_password.html"
+
+
+# Vista de precios
+class PricingView(TemplateView):
+    template_name = "pricing.html"
+
+
+
+
 
 
 
@@ -77,21 +76,15 @@ class ListarUsuarios(ListView):
 
 
 # Borrar Usuarios
-
-
 class EliminarUsuarios(DeleteView):
     model = Usuarios
     template_name = "userDelete.html"
 
 # Opciones de cuenta 
-
-
 class AccountView(TemplateView):
     template_name = "account/account.html"
 
 # Modificacion de info Usuario
-
-
 class UserUpdateView(TemplateView):
     model = Usuarios
     template_name = "account/user-personal.html"

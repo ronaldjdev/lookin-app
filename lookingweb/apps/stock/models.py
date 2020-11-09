@@ -5,20 +5,21 @@ from apps.user.models import Usuarios
 
 class Inmueble(models.Model):
     """Model define los campos para Inmueble."""
-    PROPERTY_TYPE =[
-        ('0','Escoger...'),
+    SERVICE_TYPE   = [
         ('Alquiler','Alquiler'),
         ('Venta','Venta'),
+    ]
+    PROPERTY_TYPE  = [
+        ('Apartamentos','Apartamentos'),
+        ('Oficinas','Oficinas '),
         ('Campestre','Campestre'),
         ('Terrenos','Terrenos'),
 
     ]
     COUNTRY_CHOICES= [
-        ('0','Escoger...'),
         ('COLOMBIA','Colombia'),
         ]
-    DEPAR_CHOICES = [
-                ('0','Escoger...'),
+    DEPAR_CHOICES  = [
                 ('AMAZONAS','Amazonas'),
                 ('ANTIOQUIA','Antioquia'),
                 ('ARAUCA','Arauca'),
@@ -53,20 +54,21 @@ class Inmueble(models.Model):
                 ('VICHADA','Vichada'),
         ]
     
-    assignment      = models.ForeignKey   (Usuarios, null=True, blank=True, on_delete=models.CASCADE                                  )
-    propertyName    = models.CharField    ('Nombre del inmueble' , max_length=100, blank=False, null=False                            )
-    priceProperty   = models.DecimalField ('Precio de inmueble', max_digits=5, decimal_places=2, blank=False, null=False              )
-    area            = models.DecimalField ('Area construida', max_digits=5, decimal_places=2, blank=False, null=False                 )
-    addressProperty = models.CharField    ('Ubicacion', max_length=100, blank=False, null=False                                       )
-    rooms           = models.IntegerField ('N° Habitaciones',default=1, blank=False, null=False                                       )
-    bath            = models.IntegerField ('N° Baños',default=1, blank=False, null=False                                              )
-    garage          = models.IntegerField ('N° Garajes',default=1, blank=False, null=False                                            )
-    imagesRoom      = models.ImageField   ('Fotos de descripcion', upload_to='property/img', blank=False, null=False                  )
-    typeProperty    = models.CharField    ('Tipo de Inmueble', max_length=50, choices=PROPERTY_TYPE, default="0"                                   )
-    countryProperty = models.CharField    ('Pais/Region', max_length=50, choices=COUNTRY_CHOICES, blank=False, null=False, default="0")
-    departProperty  = models.CharField    ('Departamento', max_length=50, choices=DEPAR_CHOICES, blank=False, null=False, default="0" )
-    cityProperty    = models.CharField    ('Ciudad', max_length=100, blank=False, null=False, default=None                            )
-    descrip         = models.TextField    (                                                                                           )
+    assignment      = models.ForeignKey   (Usuarios, null=True, blank=True, on_delete=models.CASCADE                                       )
+    propertyName    = models.CharField    ('Nombre del inmueble' , max_length=100, blank=False, null=False                                 )
+    priceProperty   = models.DecimalField ('Precio de inmueble', max_digits=5, decimal_places=2, blank=False, null=False                   )
+    area            = models.DecimalField ('Area construida', max_digits=5, decimal_places=2, blank=False, null=False                      )
+    addressProperty = models.CharField    ('Ubicacion', max_length=100, blank=False, null=False                                            )
+    rooms           = models.IntegerField ('N° Habitaciones',default=1, blank=False, null=False                                            )
+    bath            = models.IntegerField ('N° Baños',default=1, blank=False, null=False                                                   )
+    garage          = models.IntegerField ('N° Garajes',default=1, blank=False, null=False                                                 )
+    imagesRoom      = models.ImageField   ('Fotos de descripcion', upload_to='property/img', blank=False, null=False                       )
+    typeService     = models.CharField    ('Tipo de Servicio', max_length=50, choices=SERVICE_TYPE, blank=False, null=False, default=None  )
+    typeProperty    = models.CharField    ('Tipo de Inmueble', max_length=50, choices=PROPERTY_TYPE, blank=False, null=False, default=None )
+    countryProperty = models.CharField    ('Pais/Region', max_length=50, choices=COUNTRY_CHOICES, blank=False, null=False,default=None     )
+    departProperty  = models.CharField    ('Departamento', max_length=50, choices=DEPAR_CHOICES, blank=False, null=False, default=None     )
+    cityProperty    = models.CharField    ('Ciudad', max_length=100, blank=False, null=False, default=None                                 )
+    descrip         = models.TextField    (                                                                                                )
 
     class Meta:
         """Meta definicion Inmueble."""

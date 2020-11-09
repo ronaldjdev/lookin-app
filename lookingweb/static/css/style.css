@@ -5,7 +5,7 @@ body {
     /*font-family: 'Poppins', sans-serif;*/
     overflow-x: hidden;
     color: #555555;
-    font-family: Poppins, sans-serif;
+    font-family: "Poppins",sans-serif !important;
     
 }
 
@@ -1035,7 +1035,7 @@ div.rd-size-2 {
 /*------/ Intro Single /------*/
 
 .intro-single {
-    padding: 12rem 0 3rem;
+    padding: 1rem 0 3rem;
 }
 
 .intro-single .title-single-box {
@@ -1251,6 +1251,9 @@ div.rd-size-2 {
 /*======================================
 //--//-->   NEWS - CARD-B
 ======================================*/
+.img-box-b {
+    border-radius: 23px !important;
+}
 
 .card-header-b {
     padding: 1rem;
@@ -2059,7 +2062,7 @@ footer .credits {
         padding: 4rem 0 2.5rem 0;
     }
     .intro-single {
-        padding-top: 9rem;
+        padding-top: 20px;
     }
     .card-box-a,
     .card-box-b,
@@ -2293,7 +2296,7 @@ svg:not(:root) {
 }
 
 .radius-r {
-    border-radius: 23px 23px 23px 23px;
+    border-radius: 23px 23px 23px 23px !important;
     -moz-border-radius: 23px 23px 23px 23px;
     -webkit-border-radius: 23px 23px 23px 23px;
     border: 0px solid #000000;
@@ -2336,4 +2339,35 @@ div.container-fluid.bg-desktop{
     padding-bottom: 0; 
     padding-left: 0;  
     padding-right: 0;
+}
+
+/*======================================
+//--//-->   Image Intro
+======================================*/
+
+.intro-bg {
+    height: 100px;
+}
+
+
+/*======================================
+//--//-->   Account
+======================================*/
+
+.text-dark {
+    color: #343a40 !important
+}
+
+a.text-dark:hover,
+a.text-dark:focus {
+    color: #121416 !important
+}
+
+.badge-info-light {
+    color: #17a2b8;
+    background-color: #e3f4f6;
+}
+
+.text-sm {
+    font-size: .875rem;
 }

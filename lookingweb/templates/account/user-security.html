@@ -1,0 +1,230 @@
+{% extends 'base.html' %}
+
+{% block title %} Seguridad | Inicio sesion {% endblock  %}
+
+
+{% block content %}
+
+<!--/ Image Nav bar Start /-->
+<section class="d-flex img-fluid-rj" style="background-image: url(static/img/bg/valley_illustration.png);">
+    <div class="container-fluid intro-bg ">
+    </div>
+</section>
+<!--/ Image Nav bar End /-->
+
+<!--/ Breadcrumb Star /-->
+<section class="intro-single">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-lg-8">
+                <div class="title-single-box">
+                    <h1 class="title-single">Inicio de sesión y seguridad</h1>
+                    <span class="color-text-a">Administre su inicio de sesión, seguridad y configuración
+                        aquí.</span>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-4">
+                <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="index">Inicio</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="account">Cuenta de usuario</a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">
+                            Inicio de sesión y seguridad
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+<!--/ Breadcrumb End /-->
+
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7">
+                <div class="text-block">
+                    <h3 class="mb-4">
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">Iniciar sesión</font>
+                        </font>
+                    </h3>
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <h6>
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">Contraseña</font>
+                                </font>
+                            </h6>
+                            <p class="text-sm text-muted">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">Última actualización hace 3 años</font>
+                                </font>
+                            </p>
+                        </div>
+                        <div class="col text-right">
+                            <button class="btn btn-link pl-0 text-primary collapsed" type="button"
+                                data-toggle="collapse" data-target="#updatePassword" aria-expanded="false"
+                                aria-controls="updatePassword">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">Actualizar</font>
+                                </font>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="collapse" id="updatePassword">
+                        <div class="row mt-4">
+                            <div class="form-group col-12">
+                                <label class="form-label" for="password-current">Current Password</label>
+                                <input class="form-control" type="password" name="password-current"
+                                    id="password-current">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="form-label" for="password-new">New Password</label>
+                                <input class="form-control" type="password" name="password-new" id="password-new">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="form-label" for="password-confirm">Confirm Password</label>
+                                <input class="form-control" type="password" name="password-confirm"
+                                    id="password-confirm">
+                            </div>
+                        </div>
+                        <button class="btn btn-outline-primary">Update Password</button>
+                    </div>
+                </div>
+                <div class="text-block">
+                    <h3 class="mb-4">
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">Cuentas sociales</font>
+                        </font>
+                    </h3>
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <h6>
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">Facebook</font>
+                                </font>
+                            </h6>
+                            <p class="text-sm text-muted">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">No conectado</font>
+                                </font>
+                            </p>
+                        </div>
+                        <div class="col text-right"><a class="btn btn-text text-primary pl-0" href="#">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">Conectar</font>
+                                </font>
+                            </a></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <h6>
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">Google</font>
+                                </font>
+                            </h6>
+                            <p class="text-sm">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">Conectado</font>
+                                </font>
+                            </p>
+                        </div>
+                        <div class="col text-right"><a class="btn btn-text text-primary pl-0" href="#">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">Desconectar</font>
+                                </font>
+                            </a></div>
+                    </div>
+                </div>
+                <div class="text-block mb-5 mb-lg-0">
+                    <h3 class="mb-4">
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">Historial del dispositivo</font>
+                        </font>
+                    </h3>
+                    <div class="media">
+                        <div class="icon-rounded bg-secondary-light">
+                            <svg class="svg-icon text-secondary w-2rem h-2rem">
+                                <use xlink:href="#imac-screen-1"> </use>
+                            </svg>
+                        </div>
+                        <div class="media-body pt-2 ml-3"><strong>
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">Windows 10.0</font>
+                                </font>
+                            </strong>
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;"> · Chrome
+                                </font>
+                            </font>
+                            <div class="badge badge-secondary-light text-uppercase">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">Sesión actual</font>
+                                </font>
+                            </div>
+                            <p class="text-sm text-muted">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">Ostrava, Moravskoslezsky kraj · 6 de
+                                        abril de 2020 a las 01:51 pm</font>
+                                </font>
+                            </p><a class="btn btn-text text-primary pl-0" href="#">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">Cerrar sesión en el dispositivo</font>
+                                </font>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 ml-lg-auto">
+                <div class="card border-0 shadow">
+                    <div class="card-header bg-primary-light py-4 border-0">
+                        <div class="media align-items-center">
+                            <div class="media-body">
+                                <h4 class="h6 subtitle text-sm text-primary">
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">Hagamos su cuenta más segura</font>
+                                    </font>
+                                </h4>
+                            </div>
+                            <svg class="svg-icon svg-icon svg-icon-light w-3rem h-3rem ml-3 text-primary">
+                                <use xlink:href="#shield-security-1"> </use>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="card-body p-4">
+                        <h6 class="card-text">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">Seguridad de su cuenta: </font>
+                            </font>
+                        </h6>
+                        <p class="card-text mb-4"><span class="badge badge-info-light">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">Medio</font>
+                                </font>
+                            </span></p>
+                        <p class="text-muted card-text">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">Siempre estamos trabajando en formas de
+                                    aumentar la seguridad en nuestra comunidad. </font>
+                            </font>
+                        </p>
+                        <p class="text-muted card-text">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">Es por eso que revisamos cada cuenta para
+                                    asegurarnos de que sea lo más segura posible.</font>
+                            </font>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock  %}

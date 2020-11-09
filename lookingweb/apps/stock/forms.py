@@ -111,7 +111,10 @@ class InmuebleForm(forms.ModelForm):
                                 attrs={
                                         'class':'selectpicker show-tick',
                                         'placeholder':'Tipo de Propiedad',
-                                        'id':'typeProperty'
+                                        'id':'typeProperty',
+                                        'title':'Tipo',
+                                        'multiple':'',
+                                        'data-selected-text-format':'count',
                                         }
                         ),
 
@@ -119,7 +122,10 @@ class InmuebleForm(forms.ModelForm):
                                 attrs={
                                         'class':'selectpicker show-tick',
                                         'placeholder':'Pais\Region',
-                                        'id':'countryProperty'
+                                        'id':'countryProperty',
+                                        'title':'Pais',
+                                        'multiple':'',
+                                        'data-selected-text-format':'count',
                                 }
                         ),
 
@@ -129,6 +135,9 @@ class InmuebleForm(forms.ModelForm):
                                         'placeholder':'Departamento',
                                         'id':'departProperty',
                                         'data-size':'5',
+                                        'title':'Departamento',
+                                        'multiple':'',
+                                        'data-selected-text-format':'count',
                                 }
                         ),
 
