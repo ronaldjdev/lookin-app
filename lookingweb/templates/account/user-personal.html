@@ -1,43 +1,8 @@
 {% extends 'base.html' %}
-
+{% load static   %}
+{% block title %} Cuenta | Datos personales | Inicio sesion {% endblock  %}
 {% block style %}
-<style>
-    .svg-icon.svg-icon-light {
-        stroke-width: 2;
-    }
-
-    .svg-icon {
-        width: 18px;
-        height: 18px;
-        vertical-align: text-bottom;
-        stroke: currentColor;
-        stroke-width: 3;
-        --layer1: currentColor;
-        --layer2: currentColor;
-    }
-
-    .text-primary {
-        color: #e63946!important;
-    }
-
-    .ml-3,
-    .mx-3 {
-        margin-left: 1rem !important;
-    }
-
-    .h-3rem {
-        height: 3rem !important;
-    }
-
-    .w-3rem {
-        width: 3rem !important;
-    }
-
-    svg {
-        overflow: hidden;
-        vertical-align: middle;
-    }
-</style>
+<link rel="stylesheet" href="{% static 'css/account.css' %}">
 {% endblock  %}
 
 {% block content %}
@@ -54,8 +19,8 @@
         <div class="row">
             <div class="col-md-12 col-lg-8">
                 <div class="title-single-box">
-                    <h1 class="title-single "> Informacion personal</h1>
-                    <span class="color-text-a">Administra si informacion personal y configuracion aqui</span>
+                    <h1 class="title-single "> Información personal</h1>
+                    <span class="color-text-a">Administra su información personal y configuración aquí</span>
                 </div>
             </div>
             <div class="col-md-12 col-lg-4">
@@ -65,10 +30,10 @@
                             <a href="index">Inicio</a>
                         </li>
                         <li class="breadcrumb-item">
-                            <a href="account">Cuenta de usuario</a>
+                            <a href="account">Cuenta</a>
                         </li>
                         <li class="breadcrumb-item active" aria-current="page">
-                            Informacion personal
+                            Información personal
                         </li>
                     </ol>
                 </nav>
@@ -77,6 +42,8 @@
     </div>
 </section>
 <!--/ Breadcrumb End /-->
+
+
 <section class="py-5">
     <div class="container">
         <div class="row">
@@ -91,9 +58,9 @@
                             </h5>
                         </div>
                         <div class="col-sm-3 text-right">
-                            <button class="btn btn-link pl-0 text-primary collapsed" type="button"
-                                data-toggle="collapse" data-target="#personalDetails" aria-expanded="false"
-                                aria-controls="personalDetails">
+                            <button class="btn btn-outline-primary collapsed radius-border-r align-items-center"
+                                type="button" data-toggle="collapse" data-target="#personalDetails"
+                                aria-expanded="false" aria-controls="personalDetails">
                                 <font style="vertical-align: inherit;">
                                     <font style="vertical-align: inherit;">Actualizar</font>
                                 </font>
@@ -122,41 +89,43 @@
                         <form action="#">
                             <div class="row pt-4">
                                 <div class="form-group col-md-6">
-                                    <label class="form-label" for="name">Name</label>
-                                    <input class="form-control" type="text" name="name" id="name" value="John Doe">
+                                    <label class="form-label" for="name">Nombre</label>
+                                    <input class="form-control input-border-radius" type="text" name="name" id="name" value="John Doe">
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label class="form-label" for="date">Date of birth</label>
-                                    <input class="form-control" type="text" name="date" id="date" value="06/22/1980">
+                                    <label class="form-label" for="date">Fecha de nacimiento</label>
+                                    <input class="form-control input-border-radius" type="text" name="date" id="date" value="06/22/1980">
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label class="form-label" for="email">Email address</label>
-                                    <input class="form-control" type="email" name="email" id="email"
+                                    <label class="form-label" for="email">Email </label>
+                                    <input class="form-control input-border-radius" type="email" name="email" id="email"
                                         value="john.doe@directory.com">
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label class="form-label" for="phone">Phone number</label>
-                                    <input class="form-control" type="text" name="phone" id="phone"
+                                    <label class="form-label" for="phone">Telefono</label>
+                                    <input class="form-control input-border-radius" type="text" name="phone" id="phone"
                                         value="+42055544466">
                                 </div>
                             </div>
-                            <button class="btn btn-outline-primary mb-4" type="submit">Save your personal
-                                details</button>
+                            <button class="btn btn-outline-primary collapsed radius-border-r align-items-center"
+                                type="submit">Guardar sus datos personales</button>
                         </form>
                     </div>
                 </div>
+                <br>
+                <hr>
                 <div class="text-block">
                     <div class="row mb-3">
                         <div class="col-sm-9">
                             <h5>
                                 <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">Direccion</font>
+                                    <font style="vertical-align: inherit;">Dirección</font>
                                 </font>
                             </h5>
                         </div>
                         <div class="col-sm-3 text-right">
-                            <button class="btn btn-link pl-0 text-primary collapsed" type="button"
-                                data-toggle="collapse" data-target="#address" aria-expanded="false"
+                            <button class="btn btn-outline-primary collapsed radius-border-r align-items-center"
+                                type="button" data-toggle="collapse" data-target="#address" aria-expanded="false"
                                 aria-controls="address">
                                 <font style="vertical-align: inherit;">
                                     <font style="vertical-align: inherit;">Cambio</font>
@@ -178,17 +147,17 @@
                         <form action="#" method="post">
                             <div class="row pt-4">
                                 <div class="form-group col-md-6">
-                                    <label class="form-label" for="street">Dirrecion</label>
-                                    <input class="form-control" type="text" name="street" id="street"
+                                    <label class="form-label" for="street">Dirección</label>
+                                    <input class="form-control input-border-radius" type="text" name="street" id="street"
                                         value="123 Main St.">
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label class="form-label" for="apt">Barrio. (opcional)</label>
-                                    <input class="form-control" type="text" name="apt" id="apt" value="Apt #7">
+                                    <label class="form-label" for="apt">Barrio / Apart. (opcional)</label>
+                                    <input class="form-control input-border-radius" type="text" name="apt" id="apt" value="Apt #7">
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label class="form-label" for="city">Ciudad</label>
-                                    <input class="form-control" type="text" name="city" id="city" value="San Francisco">
+                                    <input class="form-control input-border-radius" type="text" name="city" id="city" value="San Francisco">
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label class="form-label" for="state">Departamento</label>
@@ -197,11 +166,12 @@
                                     </div>
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label class="form-label" for="zip">Codigo postal</label>
-                                    <input class="form-control" type="text" name="zip" id="zip" value="902 10">
+                                    <label class="form-label" for="zip">Codigo postal. (opcional)</label>
+                                    <input class="form-control input-border-radius" type="text" name="zip" id="zip" value="902 10">
                                 </div>
                             </div>
-                            <button class="btn btn-outline-primary">Guardar dirrecion</button>
+                            <button class="btn btn-outline-primary collapsed radius-border-r align-items-center">Guardar
+                                direccion</button>
                         </form>
                     </div>
                 </div>
@@ -218,7 +188,7 @@
                                     </font>
                                 </h4>
                             </div>
-                            <svg class="svg-icon svg-icon svg-icon-light w-3rem h-3rem ml-3 text-primary" style="">
+                            <svg class="svg-icon svg-icon svg-icon-light w-3rem h-3rem ml-3 text-primary">
                                 <use xlink:href="#identity-1">
                                     <svg xmlns="" viewBox="0 0 64 64" id="identity-1">
                                         <title>Identity</title>
@@ -242,30 +212,28 @@
                     <div class="card-body p-4">
                         <p class="text-muted text-sm card-text">
                             <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Looking solo publica la información de
+                                <font style="vertical-align: inherit;">La privacidad es un tema que nos pone
+                                    Looking solo publica la información de
                                     contacto de los vendedores y roomies </font>
                             </font><strong>
                                 <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">después de que se confirma el anuncio publicitado</font>
+                                    <font style="vertical-align: inherit;">con ofertas activas</font>
                                 </font>
                             </strong>
                             <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;"> .</font>
+                                <font style="vertical-align: inherit;">.</font>
                             </font>
                         </p>
                         <p class="text-muted text-sm card-text">
                             <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Amet nisi eiusmod minim commodo sit voluptate
-                                    aute ut quis ea veniam sunt proident ex. </font>
-                                <font style="vertical-align: inherit;">Ejercicio </font>
-                            </font><strong>
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">culpa laboris</font>
-                                </font>
-                            </strong>
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;"> consequat fugiat non ipsum veniam Lorem aliqua
-                                    deserunt tempor elit veniam.</font>
+                                <font style="vertical-align: inherit;">La información de los espectadores registrados se
+                                    hará visible</font>
+                                <strong>
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">únicamente</font>
+                                    </font>
+                                </strong>
+                                <font style="vertical-align: inherit;">para los usuarios con los que haya contactado</font>
                             </font>
                         </p>
                     </div>
@@ -274,5 +242,4 @@
         </div>
     </div>
 </section>
-
 {% endblock  %}

@@ -18,10 +18,21 @@ h6 {
     color: #000000;
 }
 
+a.atw {
+    color: #ffff;
+    transition: all .5s ease;
+}
+
+a.atw:hover {
+    color: #e63946;
+    text-decoration: none;
+}
+
 a {
     color: #000000;
     transition: all .5s ease;
 }
+
 
 a:hover {
     color: #e63946;
@@ -2353,21 +2364,6 @@ div.container-fluid.bg-desktop{
 /*======================================
 //--//-->   Account
 ======================================*/
-
-.text-dark {
-    color: #343a40 !important
-}
-
-a.text-dark:hover,
-a.text-dark:focus {
-    color: #121416 !important
-}
-
-.badge-info-light {
-    color: #17a2b8;
-    background-color: #e3f4f6;
-}
-
-.text-sm {
-    font-size: .875rem;
+.text-bold {
+    font-weight: bold;
 }

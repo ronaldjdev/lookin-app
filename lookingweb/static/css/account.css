@@ -1,112 +1,214 @@
+/*======================================
+//--//-->   ACCOUNT
+======================================*/
+
 .stretched-link::after {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1;
-    pointer-events: auto;
-    content: "";
-    background-color: rgba(0, 0, 0, 0)
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: auto;
+  content: "";
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .h-100 {
-    height: 100% !important
+  height: 100% !important;
 }
 
 .hover-animate {
-    transition: all 0.2s ease-in-out
+  transition: all 0.2s ease-in-out;
 }
 .hover-animate:hover,
 .hover-animate:focus {
-    -webkit-transform: translate3d(0, -2px, 5px);
-    transform: translate3d(0, -2px, 5px)
+  -webkit-transform: translate3d(0, -2px, 5px);
+  transform: translate3d(0, -2px, 5px);
 }
 
 .card-body {
-    -ms-flex: 1 1 auto;
-    flex: 1 1 auto;
-    min-height: 1px;
-    padding: 1.25rem
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  min-height: 1px;
+  padding: 1.25rem;
 }
 
 .mb-30px {
-    margin-bottom: 30px
+  margin-bottom: 30px;
 }
 
 .icon-rounded {
-    display: inline-block;
-    width: 4rem;
-    height: 4rem;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 4rem
+  display: inline-block;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 4rem;
 }
 
 .icon-rounded svg,
 .icon-rounded i {
-    vertical-align: middle
+  vertical-align: middle;
 }
 
 .icon-rounded.icon-rounded-sm {
-    width: 3rem;
-    height: 3rem;
-    line-height: 3rem
+  width: 3rem;
+  height: 3rem;
+  line-height: 3rem;
 }
 
 .icon-rounded.icon-rounded-lg {
-    width: 5rem;
-    height: 5rem;
-    line-height: 5rem
+  width: 5rem;
+  height: 5rem;
+  line-height: 5rem;
 }
 
 .icon-rounded.icon-rounded-xl {
-    width: 7rem;
-    height: 7rem;
-    line-height: 7rem
+  width: 7rem;
+  height: 7rem;
+  line-height: 7rem;
 }
 
 .svg-icon {
-    width: 18px;
-    height: 18px;
-    vertical-align: text-bottom;
-    stroke: currentColor;
-    stroke-width: 3;
-    --layer1: currentColor;
-    --layer2: currentColor
+  width: 18px;
+  height: 18px;
+  vertical-align: text-bottom;
+  stroke: currentColor;
+  stroke-width: 3;
+  --layer1: currentColor;
+  --layer2: currentColor;
 }
 
 .svg-icon.svg-icon-light {
-    stroke-width: 2
+  stroke-width: 2;
 }
 
 .svg-icon.svg-icon-heavy {
-    stroke-width: 4
+  stroke-width: 4;
 }
 
 .svg-icon.svg-icon-md {
-    width: 30px;
-    height: 30px
+  width: 30px;
+  height: 30px;
 }
 
 .svg-icon.svg-icon-lg {
-    width: 36px;
-    height: 36px
+  width: 36px;
+  height: 36px;
 }
 
 .bg-secondary-light {
-    background-color: #fce8f1
+  background-color: #fce8f1;
 }
 
 .shadow {
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.15) !important
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.15) !important;
 }
 
 .w-2rem {
-    width: 2rem !important
+  width: 2rem !important;
 }
 
 .h-2rem {
-    height: 2rem !important
+  height: 2rem !important;
 }
 
+.radius-r-card {
+    border-radius: 23px 23px 0px 0px !important;
+    -moz-border-radius: 23px 23px 23px 23px;
+    -webkit-border-radius: 23px 23px 23px 23px;
+    border: 0px solid #000000;
+}
+
+div.bg-primary-light {
+    background: #fcf5c7 !important;
+}
+
+
+.text-dark {
+    color: #343a40 !important
+}
+
+a.text-dark:hover,
+a.text-dark:focus {
+    color: #121416 !important
+}
+
+.badge-info-light {
+    color: #17a2b8;
+    background-color: #e3f4f6;
+}
+
+.text-sm {
+    font-size: .875rem;
+}
+
+
+.badge-secondary-light {
+    color: #e83e8c;
+    background-color: #fce8f1;
+}
+/*======================================
+//--//-->   USER PERSONAL
+======================================*/
+
+.svg-icon.svg-icon-light {
+  stroke-width: 3;
+}
+
+.svg-icon {
+  width: 18px;
+  height: 18px;
+  vertical-align: text-bottom;
+  stroke: currentColor;
+  stroke-width: 3;
+  --layer1: currentColor;
+  --layer2: currentColor;
+}
+
+.text-primary {
+  color: #e63946 !important;
+}
+
+.ml-3,
+.mx-3 {
+  margin-left: 1rem !important;
+}
+
+.h-3rem {
+  height: 3rem !important;
+}
+
+.w-3rem {
+  width: 3rem !important;
+}
+
+svg {
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.radius-border-r {
+  border-radius: 23px 23px 23px 23px !important;
+  -moz-border-radius: 23px 23px 23px 23px;
+  -webkit-border-radius: 23px 23px 23px 23px;
+  border: 0px solid #000000;
+  border: #e63946 2px solid;
+}
+
+/*======================================
+//--//-->   USER SECURITY
+======================================*/
+
+.input-border-radius {
+    border-radius: 23px 23px 23px 23px !important;
+    -moz-border-radius: 23px 23px 23px 23px;
+    -webkit-border-radius: 23px 23px 23px 23px;
+    border: 1px solid #ced4da ;
+    transition: border .3s
+  }
+
+  .input-border-radius:hover {
+    border: #e63946 1px solid;
+  }
