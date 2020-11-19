@@ -34,3 +34,6 @@ Modificaciones informacion personal cuenta de usuario
 
 class UserSecurityView(TemplateView):
     template_name = "account/user-security.html"
+
+class UserNotificationView(TemplateView):
+    template_name = "account/user-notification.html"

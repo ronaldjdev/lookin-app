@@ -22,6 +22,8 @@ from django.contrib.auth.decorators import login_required
 from apps  .home   .views           import *
 from apps  .login  .views           import *
 from apps  .stock  .views           import *
+from apps  .user   .views           import *
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -39,6 +41,7 @@ urlpatterns = [
     # User Personal Edit
     path('user-personal', UserUpdateView.as_view(), name= 'user-personal'),
     path('user-security', UserSecurityView.as_view(), name= 'user-security'),
+    path('user-notification', UserNotificationView.as_view(), name= 'user-notification'),
     # Property
     path('warning'      , WarningView     .as_view(), name= 'warning'      ),
     path('add-property' , AddPropertyView .as_view(), name= 'add-property' ),

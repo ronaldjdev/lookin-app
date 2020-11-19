@@ -1,0 +1,255 @@
+{% extends 'base.html' %}
+{% load static   %}
+{% block title %} Cuenta | Notificaciones {% endblock  %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/account.css' %}">
+<link rel="stylesheet" href="{% static 'css/switch.css' %}">
+{% endblock  %}
+
+{% block content %}
+<!--/ Image Nav bar Start /-->
+<section class="d-flex img-fluid-rj" style="background-image: url(static/img/bg/valley_illustration.png);">
+    <div class="container-fluid intro-bg ">
+    </div>
+</section>
+<!--/ Image Nav bar End /-->
+
+<!--/ Breadcrumb Star /-->
+<section class="intro-single">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-lg-8">
+                <div class="title-single-box">
+                    <h1 class="title-single "> Notificaciones</h1>
+                    <span class="color-text-a">Recibe mensajes de roomies ytus alquileres, así como solicitudes de
+                        posibles clientes.</span>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-4">
+                <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="index">Inicio</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="account">Cuenta</a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">
+                            Notificaciones
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+<!--/ Breadcrumb End /-->
+
+
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7">
+                <div class="text-block">
+                    <div class="row mb-3">
+                        <div class="col-sm-9">
+                            <h5>
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">Mensajes</font>
+                                </font>
+                                <p class="text-sm">
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">Recibe mensajes de huéspedes y anfitriones, así como solicitudes de reserva.</font>
+                                    </font>
+                                </p>
+                            </h5>
+                        </div>
+                        <div class="col-sm-3 text-right">
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <p class="text-sm text-muted"><i class="fa fa-id-card fa-fw mr-2"></i>
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">John Doe</font>
+                        </font><br><i class="fa fa-birthday-cake fa-fw mr-2"></i>
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">22/06/1980</font>
+                        </font><br><i class="fa fa-envelope-open fa-fw mr-2"></i>
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">john.doe@directory.com </font>
+                        </font><span class="mx-2">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">|</font>
+                            </font>
+                        </span> <i class="fa fa-phone fa-fw mr-2"></i>
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">+42055544466</font>
+                        </font>
+                    </p>
+                    <div class="collapse" id="personalDetails">
+                        <form action="#">
+                            <div class="row pt-4">
+                                <div class="form-group col-md-6">
+                                    <label class="form-label" for="name">Nombre</label>
+                                    <input class="form-control input-border-radius" type="text" name="name" id="name"
+                                        value="John Doe">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="form-label" for="date">Fecha de nacimiento</label>
+                                    <input class="form-control input-border-radius" type="text" name="date" id="date"
+                                        value="06/22/1980">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="form-label" for="email">Email </label>
+                                    <input class="form-control input-border-radius" type="email" name="email" id="email"
+                                        value="john.doe@directory.com">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="form-label" for="phone">Telefono</label>
+                                    <input class="form-control input-border-radius" type="text" name="phone" id="phone"
+                                        value="+42055544466">
+                                </div>
+                            </div>
+                            <button class="btn btn-outline-primary collapsed radius-border-r align-items-center"
+                                type="submit">Actualizar</button>
+                        </form>
+                    </div>
+                </div>
+                <br>
+                <hr>
+                <div class="text-block">
+                    <div class="row mb-3">
+                        <div class="col-sm-9">
+                            <h5>
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">Dirección</font>
+                                </font>
+                            </h5>
+                        </div>
+                        <div class="col-sm-3 text-right">
+                            <button class="btn btn-outline-primary collapsed radius-border-r align-items-center"
+                                type="button" data-toggle="collapse" data-target="#address" aria-expanded="false"
+                                aria-controls="address">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">Cambio</font>
+                                </font>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="media text-sm text-muted"> <i class="fa fa-address-book fa-fw mr-2"></i>
+                        <div class="media-body mt-n1">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">123 Main St., Apt # 7 </font>
+                            </font><br>
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">San Francisco, CA, 902 10</font>
+                            </font>
+                        </div>
+                    </div>
+                    <div class="collapse" id="address">
+                        <form action="#" method="post">
+                            <div class="row pt-4">
+                                <div class="form-group col-md-6">
+                                    <label class="form-label" for="street">Dirección</label>
+                                    <input class="form-control input-border-radius" type="text" name="street"
+                                        id="street" value="123 Main St.">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="form-label" for="apt">Barrio / Apart. (opcional)</label>
+                                    <input class="form-control input-border-radius" type="text" name="apt" id="apt"
+                                        value="Apt #7">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="form-label" for="city">Ciudad</label>
+                                    <input class="form-control input-border-radius" type="text" name="city" id="city"
+                                        value="San Francisco">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="form-label" for="state">Departamento</label>
+                                    <div class="dropdown bootstrap-select form-control">
+                                        {{form.depart}}
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="form-label" for="zip">Codigo postal. (opcional)</label>
+                                    <input class="form-control input-border-radius" type="text" name="zip" id="zip"
+                                        value="902 10">
+                                </div>
+                            </div>
+                            <button class="btn btn-outline-primary collapsed radius-border-r align-items-center">Guardar
+                                direccion</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 ml-lg-auto">
+                <div class="card border-0 shadow">
+                    <div class="card-header bg-primary-light py-4 border-0">
+                        <div class="media align-items-center">
+                            <div class="media-body">
+                                <h4 class="h6 subtitle text-sm text-primary">
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">¿Qué información se comparte con los
+                                            demás?</font>
+                                    </font>
+                                </h4>
+                            </div>
+                            <svg class="svg-icon svg-icon svg-icon-light w-3rem h-3rem ml-3 text-primary">
+                                <use xlink:href="#identity-1">
+                                    <svg xmlns="" viewBox="0 0 64 64" id="identity-1">
+                                        <title>Identity</title>
+                                        <desc>A line styled icon from Orion Icon Library.</desc>
+                                        <path data-name="layer1"
+                                            d="M34 46.9c4-.9 4-2.3 4-3.3v-1.5a9.3 9.3 0 0 1-2.9-6.9v-4.5a7 7 0 0 1 13.9 0v4.5a9.3 9.3 0 0 1-3 6.9v1.5c0 .9 0 2.4 4.1 3.3S54 52 54 52H30a5.1 5.1 0 0 1 4-5.1z"
+                                            fill="none" stroke="#101010" stroke-miterlimit="10" stroke-linejoin="round"
+                                            stroke-linecap="round" style="stroke:var(--layer2, #101010)"></path>
+                                        <path data-name="layer2" fill="none" stroke="#101010" stroke-miterlimit="10"
+                                            d="M10 10H2v50h60V10h-8M26 24H10m10 8H10m14 8H10m8-30h28"
+                                            stroke-linejoin="round" stroke-linecap="round"
+                                            style="stroke:var(--layer2, #101010)"></path>
+                                        <path data-name="layer1" fill="none" stroke="#101010" stroke-miterlimit="10"
+                                            d="M10 4h8v12h-8zm36 0h8v12h-8z" stroke-linejoin="round"
+                                            stroke-linecap="round" style="stroke:var(--layer2, #101010)"></path>
+                                    </svg>
+                                </use>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="card-body p-4">
+                        <p class="text-muted text-sm card-text">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">La privacidad es un tema que nos pone
+                                    Looking solo publica la información de
+                                    contacto de los vendedores y roomies </font>
+                            </font><strong>
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">con ofertas activas</font>
+                                </font>
+                            </strong>
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">.</font>
+                            </font>
+                        </p>
+                        <p class="text-muted text-sm card-text">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">La información de los espectadores registrados se
+                                    hará visible</font>
+                                <strong>
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">únicamente</font>
+                                    </font>
+                                </strong>
+                                <font style="vertical-align: inherit;">para los usuarios con los que haya contactado
+                                </font>
+                            </font>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock  %}
