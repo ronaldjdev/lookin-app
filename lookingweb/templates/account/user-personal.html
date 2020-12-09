@@ -1,9 +1,13 @@
 {% extends 'base.html' %}
+
 {% load static   %}
-{% block title %} Cuenta | Datos personales | Inicio sesion {% endblock  %}
+{% block title %} 
+Cuenta | Información personal 
+{% endblock title %}
+
 {% block style %}
 <link rel="stylesheet" href="{% static 'css/account.css' %}">
-{% endblock  %}
+{% endblock style %}
 
 {% block content %}
 <!--/ Image Nav bar Start /-->
@@ -177,8 +181,8 @@
                 </div>
             </div>
             <div class="col-md-6 col-lg-4 ml-lg-auto">
-                <div class="card border-0 shadow">
-                    <div class="card-header bg-primary-light py-4 border-0">
+                <div class="card border-0 shadow radius-r">
+                    <div class="card-header bg-primary-light py-4 border-0 radius-r">
                         <div class="media align-items-center">
                             <div class="media-body">
                                 <h4 class="h6 subtitle text-sm text-primary">
@@ -188,31 +192,13 @@
                                     </font>
                                 </h4>
                             </div>
-                            <svg class="svg-icon svg-icon svg-icon-light w-3rem h-3rem ml-3 text-primary">
-                                <use xlink:href="#identity-1">
-                                    <svg xmlns="" viewBox="0 0 64 64" id="identity-1">
-                                        <title>Identity</title>
-                                        <desc>A line styled icon from Orion Icon Library.</desc>
-                                        <path data-name="layer1"
-                                            d="M34 46.9c4-.9 4-2.3 4-3.3v-1.5a9.3 9.3 0 0 1-2.9-6.9v-4.5a7 7 0 0 1 13.9 0v4.5a9.3 9.3 0 0 1-3 6.9v1.5c0 .9 0 2.4 4.1 3.3S54 52 54 52H30a5.1 5.1 0 0 1 4-5.1z"
-                                            fill="none" stroke="#101010" stroke-miterlimit="10" stroke-linejoin="round"
-                                            stroke-linecap="round" style="stroke:var(--layer2, #101010)"></path>
-                                        <path data-name="layer2" fill="none" stroke="#101010" stroke-miterlimit="10"
-                                            d="M10 10H2v50h60V10h-8M26 24H10m10 8H10m14 8H10m8-30h28"
-                                            stroke-linejoin="round" stroke-linecap="round"
-                                            style="stroke:var(--layer2, #101010)"></path>
-                                        <path data-name="layer1" fill="none" stroke="#101010" stroke-miterlimit="10"
-                                            d="M10 4h8v12h-8zm36 0h8v12h-8z" stroke-linejoin="round"
-                                            stroke-linecap="round" style="stroke:var(--layer2, #101010)"></path>
-                                    </svg>
-                                </use>
-                            </svg>
+                            <img class="ico-size" src="static/svg/tarjeta-de-identificacion.svg" alt="">
                         </div>
                     </div>
                     <div class="card-body p-4">
                         <p class="text-muted text-sm card-text">
                             <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">La privacidad es un tema que nos pone
+                                <font style="vertical-align: inherit;">
                                     Looking solo publica la información de
                                     contacto de los vendedores y roomies </font>
                             </font><strong>
@@ -242,4 +228,4 @@
         </div>
     </div>
 </section>
-{% endblock  %}
+{% endblock content %}

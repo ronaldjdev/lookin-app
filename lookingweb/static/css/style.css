@@ -2367,3 +2367,11 @@ div.container-fluid.bg-desktop{
 .text-bold {
     font-weight: bold;
 }
+
+div.text-nodrop {
+    opacity: 0.5;
+}
+.text-nodrop:hover {
+    cursor: no-drop;
+}
+

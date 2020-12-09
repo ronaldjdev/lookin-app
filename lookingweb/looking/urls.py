@@ -39,9 +39,12 @@ urlpatterns = [
     path('account', login_required   (AccountView.as_view()), name= 'account'),
     path('sign-in', RegistrarUsuarios.as_view    (         ), name= 'sign-in'),
     # User Personal Edit
-    path('user-personal', UserUpdateView.as_view(), name= 'user-personal'),
-    path('user-security', UserSecurityView.as_view(), name= 'user-security'),
+    path('user-personal'    , UserUpdateView      .as_view(), name= 'user-personal'    ),
+    path('user-security'    , UserSecurityView    .as_view(), name= 'user-security'    ),
+    path('user-settings'    , UserSettingsView    .as_view(), name= 'user-settings'    ),
     path('user-notification', UserNotificationView.as_view(), name= 'user-notification'),
+    path('user-privacy'     , UserPrivacyView     .as_view(), name= 'user-privacy'     ),
+    path('user-payment'     , UserPaymentView     .as_view(), name= 'user-payment'     ),
     # Property
     path('warning'      , WarningView     .as_view(), name= 'warning'      ),
     path('add-property' , AddPropertyView .as_view(), name= 'add-property' ),

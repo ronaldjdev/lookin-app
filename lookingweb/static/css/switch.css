@@ -2,8 +2,8 @@
 .switch {
     position: relative;
     display: inline-block;
-    width: 25px;
-    height: 34px;
+    width: 52px;
+    height: 26px;
   }
    
   /* Ocultamos el checkbox html */
@@ -28,8 +28,8 @@
   .slider:before {
     position: absolute;
     content: "";
-    height: 26px;
-    width: 26px;
+    height: 18px;
+    width: 18px;
     left: 4px;
     bottom: 4px;
     background-color: white;

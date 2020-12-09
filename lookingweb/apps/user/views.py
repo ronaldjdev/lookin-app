@@ -37,3 +37,13 @@ class UserSecurityView(TemplateView):
 
 class UserNotificationView(TemplateView):
     template_name = "account/user-notification.html"
+
+class UserSettingsView(TemplateView):
+    template_name = "account/user-settings.html"
+
+class UserPrivacyView(TemplateView):
+    template_name = "account/user-privacy.html"
+
+class UserPaymentView(TemplateView):
+    template_name = "account/user-payment.html"
+

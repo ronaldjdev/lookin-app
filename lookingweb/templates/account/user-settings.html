@@ -1,0 +1,233 @@
+{% extends 'base.html' %}
+{% load static   %}
+{% block title %} Cuenta | Datos personales | Inicio sesion {% endblock  %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/account.css' %}">
+{% endblock  %}
+
+{% block content %}
+<!--/ Image Nav bar Start /-->
+<section class="d-flex img-fluid-rj" style="background-image: url(static/img/bg/valley_illustration.png);">
+    <div class="container-fluid intro-bg ">
+    </div>
+</section>
+<!--/ Image Nav bar End /-->
+
+<!--/ Breadcrumb Star /-->
+<section class="intro-single">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-lg-8">
+                <div class="title-single-box">
+                    <h1 class="title-single "> Preferencias globales</h1>
+                    <span class="color-text-a">Configura tu idioma, moneda y zona horaria</span>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-4">
+                <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="index">Inicio</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="account">Cuenta</a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">
+                            Preferencias globales
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+<!--/ Breadcrumb End /-->
+
+
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7">
+                <!--/ Language Start /-->
+                <div class="text-block">
+                    <div class="row mb-3">
+                        <div class="col-sm-9">
+                            <h5>
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">Idioma </font>
+                                </font>
+                            </h5>
+                        </div>
+                        <div class="col-sm-3 text-right">
+                            <button class="btn btn-outline-primary collapsed radius-border-r align-items-center"
+                                type="button" data-toggle="collapse" data-target="#languageDetails"
+                                aria-expanded="false" aria-controls="languageDetails">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">Seleccionar</font>
+                                </font>
+                            </button>
+                        </div>
+                    </div>
+                    <p class="text-sm text-muted"><i class="fas fa-globe-americas fa-fw mr-2"></i>
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">Español</font>
+                        </font>
+                    </p>
+                    <div class="collapse" id="languageDetails">
+                        <form action="#">
+                            <div class="row pt-4">
+                                <div class="form-group col-md-6">
+                                    <label class="form-label" for="name">Idioma</label>
+                                    <select class=" selectpicker form-control " style="border-radius: 5rem;">
+                                        <option value="ESP">Español</option>
+                                        <option value="ENG">Ingles</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline-primary collapsed radius-border-r align-items-center"
+                                type="submit">Actualizar</button>
+                        </form>
+                    </div>
+                </div>
+                <!--/ Language End /-->
+                <br>
+                <hr>
+                <!--/ Cash Start /-->
+                <div class="text-block">
+                    <div class="row mb-3">
+                        <div class="col-sm-9">
+                            <h5>
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">Divisa</font>
+                                </font>
+                            </h5>
+                        </div>
+                        <div class="col-sm-3 text-right">
+                            <button class="btn btn-outline-primary collapsed radius-border-r align-items-center"
+                                type="button" data-toggle="collapse" data-target="#cashDetails" aria-expanded="false"
+                                aria-controls="cashDetails">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">Seleccionar</font>
+                                </font>
+                            </button>
+                        </div>
+                    </div>
+                    <p class="text-sm text-muted"><i class="fas fa-dollar-sign fa-fw mr-2"></i>
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">Peso colombiano</font>
+                        </font>
+                    </p>
+                    <div class="collapse" id="cashDetails">
+                        <form action="#">
+                            <div class="row pt-4">
+                                <div class="form-group col-md-6">
+                                    <label class="form-label" for="name">Divisa</label>
+                                    <select class=" selectpicker form-control " style="border-radius: 5rem;">
+                                        <option value="COP">Peso colombiano</option>
+                                        <option value="USD">Dolar americano</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline-primary collapsed radius-border-r align-items-center"
+                                type="submit">Actualizar</button>
+                        </form>
+                    </div>
+                </div>
+                <!--/ Cash End /-->
+                <br>
+                <hr>
+                <!--/ Time Zone Start /-->
+                <div class="text-block">
+                    <div class="row mb-3">
+                        <div class="col-sm-9">
+                            <h5>
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">Zona Horaria</font>
+                                </font>
+                            </h5>
+                        </div>
+                        <div class="col-sm-3 text-right">
+                            <button class="btn btn-outline-primary collapsed radius-border-r align-items-center"
+                                type="button" data-toggle="collapse" data-target="#timeZoneDetails"
+                                aria-expanded="false" aria-controls="timeZoneDetails">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">Seleccionar</font>
+                                </font>
+                            </button>
+                        </div>
+                    </div>
+                    <p class="text-sm text-muted"><i class="fas fa-calendar-check fa-fw mr-2"></i>
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">(GMT-05:00) Bogota</font>
+                        </font>
+                    </p>
+                    <div class="collapse" id="timeZoneDetails">
+                        <form action="#">
+                            <div class="row pt-4">
+                                <div class="form-group col-md-6">
+                                    <label class="form-label" for="name">Zona Horaria</label>
+                                    <select class=" selectpicker form-control " style="border-radius: 5rem;">
+                                        <option value="">(GMT-05:00) Bogota</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline-primary collapsed radius-border-r align-items-center"
+                                type="submit">Actualizar</button>
+                        </form>
+                    </div>
+                </div>
+                <!--/ Time Zone End /-->
+            </div>
+            <!--/ Info Card Start /-->
+            <div class="col-md-6 col-lg-4 ml-lg-auto">
+                <div class="card border-0 shadow">
+                    <div class="card-header bg-primary-light py-4 border-0">
+                        <div class="media align-items-center">
+                            <div class="media-body">
+                                <h4 class="h6 subtitle text-sm text-primary">
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">¿Como deseas visualizar nuestra interfaz
+                                            ?</font>
+                                    </font>
+                                </h4>
+                            </div>
+                            <img class="ico-size" src="static/svg/mantenimiento.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="card-body p-4">
+                        <p class="text-muted text-sm card-text">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">Las preferencias globales son opciones que
+                                    afectan a
+                                    la aplicación completa de looking</font>
+                            </font>
+                            
+                            </font>
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;"></font>
+                            </font>
+                        </p>
+                        <p class="text-muted text-sm card-text">
+                            <strong>
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">Modifica </font>
+                            </strong>
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">estas preferencias según tus necesidades para tu mayor comodidad</font>
+                                <strong>
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">.</font>
+                                    </font>
+                                </strong>
+                                <font style="vertical-align: inherit;">
+                                </font>
+                            </font>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!--/ Info Card End /-->
+        </div>
+    </div>
+</section>
+{% endblock  %}

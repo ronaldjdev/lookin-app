@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block title %}Iniciar Sesion{% endblock %}
+{% block title %}Iniciar Sesion{% endblock title %}
 
 {% block style %}
     <style>
@@ -9,7 +9,7 @@
             background: linear-gradient(to right, #0062E6, #33AEFF);
         }
     </style>
-{% endblock  %}
+{% endblock style %}
 {% block content %}
     <!--/ Iniciar Sesion /-->
     <!-- This snippet uses Font Awesome 5 Free as a dependency. You can download it at fontawesome.io! -->
@@ -51,5 +51,5 @@
         </div>
     </section>
 
-    {% endblock %}
+    {% endblock style %}
 </body>
