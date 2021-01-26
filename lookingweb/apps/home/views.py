@@ -1,6 +1,3 @@
-from apps.login.forms import RegistryForms
-from django.shortcuts         import render      , redirect
-from django.http              import HttpResponse
 from django.views    .generic import TemplateView, CreateView
 from apps.user.models import Usuarios
 from apps.stock.forms import InmuebleForm
