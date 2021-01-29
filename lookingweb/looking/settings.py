@@ -49,6 +49,7 @@ PROJECT_APPS = [
     'apps.login',
     'apps.stock',
     'apps.user',
+    'apps.blog',
 
 ]
 

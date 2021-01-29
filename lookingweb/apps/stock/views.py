@@ -6,7 +6,11 @@ from django.views    .generic import TemplateView
 
 
 # Create your views here.
-
+"""
+------------------------------------------------------
+Agregar nuevos inmbuebles al stock 
+------------------------------------------------------ 
+"""
 
 class WarningView(TemplateView):
     template_name = "account/aviso.html"
@@ -29,3 +33,14 @@ class AddPropertyView4(TemplateView):
 class AddPropertyView5(TemplateView):
     template_name = "add/add-property-5.html"
 
+"""
+------------------------------------------------------
+Visualizaciones de Inmuebles
+------------------------------------------------------ 
+"""
+
+class PropertyGridView(TemplateView):
+    template_name = "property/property-grid.html"
+
+class PropertySingleView(TemplateView):
+    template_name = "property/property-single.html"

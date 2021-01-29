@@ -47,3 +47,15 @@ class UserPrivacyView(TemplateView):
 class UserPaymentView(TemplateView):
     template_name = "account/user-payment.html"
 
+"""
+------------------------------------------------------
+Perfiles de informacion agentes inmobiliarios
+------------------------------------------------------ 
+"""
+
+
+class AddAgentSingleView(TemplateView):
+    template_name = "agents/agent-single.html"
+
+class AddAgentGridView(TemplateView):
+    template_name = "agents/agents-grid.html"

@@ -11,7 +11,11 @@ from apps  .user      .models           import Usuarios
 from       .forms                       import LoginForms       , RegistryForms
 
 
-
+"""
+------------------------------------------------------
+Modificaciones informacion personal cuenta de usuario 
+------------------------------------------------------ 
+"""
 
 # Inicio de sesion
 

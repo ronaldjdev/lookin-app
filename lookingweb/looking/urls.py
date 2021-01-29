@@ -15,6 +15,7 @@ Including another URLconf
 """
 
 
+from apps.blog.views import BlogGridView, BlogSingleView
 from apps.user.views import UserSecurityView
 from django.contrib                 import admin
 from django.urls                    import path
@@ -27,25 +28,25 @@ from apps  .user   .views           import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # Home
+    # Inico
     path(''     , IndexCreateView.as_view(), name= 'index' ),
     path('index', IndexCreateView.as_view(), name= 'index' ),
     # Info
     path('about'  , AboutView  .as_view(), name= 'about'  ),
     path('contact', ContactView.as_view(), name= 'contact'),
-    # Account
+    # Cuentas
     path('login'  , LoginView        .as_view    (         ), name= 'login'  ),
     path('logout' , login_required   (logout_page          ), name= 'logout' ),
     path('account', login_required   (AccountView.as_view()), name= 'account'),
     path('sign-in', RegistrarUsuarios.as_view    (         ), name= 'sign-in'),
-    # User Personal Edit
+    # Editar Informacion personal
     path('user-personal'    , UserUpdateView      .as_view(), name= 'user-personal'    ),
     path('user-security'    , UserSecurityView    .as_view(), name= 'user-security'    ),
     path('user-settings'    , UserSettingsView    .as_view(), name= 'user-settings'    ),
     path('user-notification', UserNotificationView.as_view(), name= 'user-notification'),
     path('user-privacy'     , UserPrivacyView     .as_view(), name= 'user-privacy'     ),
     path('user-payment'     , UserPaymentView     .as_view(), name= 'user-payment'     ),
-    # Property
+    # Agregar propiedades
     path('warning'      , WarningView     .as_view(), name= 'warning'      ),
     path('add-property' , AddPropertyView .as_view(), name= 'add-property' ),
     path('add-property-1', login_required(AddPropertyView1.as_view()), name= 'add-property-1'),
@@ -53,4 +54,13 @@ urlpatterns = [
     path('add-property-3', login_required(AddPropertyView3.as_view()), name= 'add-property-3'),
     path('add-property-4', login_required(AddPropertyView4.as_view()), name= 'add-property-4'),
     path('add-property-5', login_required(AddPropertyView5.as_view()), name= 'add-property-5'),
+    # Perfiles de Agentes Inmobiliarios
+    path('agent-single' , AddAgentSingleView .as_view(), name ='agent-single' ),
+    path('agents-grid'  , AddAgentGridView   .as_view(), name ='agents-grid'  ),
+    # Visualizar propiedades
+    path('property-grid'  , PropertyGridView  .as_view(), name = 'property-grid'  ),
+    path('property-single', PropertySingleView.as_view(), name = 'property-single'),
+    # Visualizar Blog de usuarios
+    path('blog-grid'  , BlogGridView  .as_view(), name='blog-grid'  ),
+    path('blog-single', BlogSingleView.as_view(), name='blog-single')
 ]
