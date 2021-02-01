@@ -20,7 +20,7 @@ Modificaciones informacion personal cuenta de usuario
 # Inicio de sesion
 
 class LoginView (FormView):
-    template_name = 'account/sign-in.html'
+    template_name = 'account/log-in.html'
     form_class = LoginForms
     success_url = reverse_lazy('index')
 
@@ -56,18 +56,8 @@ class RegistrarUsuarios (CreateView):
 
 
 # Restablecer contraseña
-class ResetPassword(TemplateView):
-    template_name = "reset_password.html"
-
-
-# Vista de precios
-class PricingView(TemplateView):
-    template_name = "pricing.html"
-
-
-
-
-
+class ResetPasswordView(TemplateView):
+    template_name = "account/reset_password.html"
 
 
 # Lista de usuarios

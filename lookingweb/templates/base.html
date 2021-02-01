@@ -68,7 +68,7 @@
     <!--PRELOADER-->
     <div id="preloader">
         <div id="status">
-            <img alt="logo" src="static/img/LookingHome.png">
+            <img alt="logo" src="{% static 'img/LookingHome.png' %}">
         </div>
     </div>
     <!--/.PRELOADER END-->
@@ -185,7 +185,7 @@
                 <span class="justifyButton"></span>
             </button>
             <a class="navbar-brand text-brand p-0" href=" index">
-                <img id="changeLogo" src="static/img/Looking-3-white.png" alt="Logo looking blanco"></a>
+                <img id="changeLogo" src="{% static 'img/Looking-3-white.png' %}" alt="Logo looking blanco"></a>
             <button type="button" class="btn btn-link nav-search navbar-toggle-box-collapse d-md-none"
                 data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-expanded="false">
                 <span class="fa fa-search" aria-hidden="true"></span>
@@ -233,9 +233,9 @@
                 <li class="nav-item dropdown" style="padding-bottom: 0; list-style: none;">
                     <a href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false" style="display: flex;">
-                        <img src="static/svg/justification.svg" alt=""
+                        <img src="{% static 'svg/justification.svg' %}" alt=""
                             style=" position: relative; right: 5px; top: 2px; height: 25x; width: 20px;">
-                        <img src="static/svg/user-image-with-black-background.svg" alt=""
+                        <img src="{% static 'svg/user-image-with-black-background.svg' %}" alt=""
                             style="position: relative; height: 30px; width: 35px;">
                     </a>
                     {% if request.user.is_authenticated %}

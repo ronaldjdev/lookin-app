@@ -15,15 +15,15 @@ Including another URLconf
 """
 
 
-from apps.blog.views import BlogGridView, BlogSingleView
-from apps.user.views import UserSecurityView
-from django.contrib                 import admin
-from django.urls                    import path
-from django.contrib.auth.decorators import login_required
-from apps  .home   .views           import *
-from apps  .login  .views           import *
-from apps  .stock  .views           import *
-from apps  .user   .views           import *
+from django .contrib import admin
+from django .urls    import path, include
+from django .contrib.       auth  .decorators import login_required
+from django.conf.urls import handler404
+from apps   .home    .      views import *
+from apps   .stock   .      views import *
+from apps   .user    .      views import *
+from apps   .blog    .      views import *
+from apps   .user    .      views import *
 
 
 urlpatterns = [
@@ -35,10 +35,7 @@ urlpatterns = [
     path('about'  , AboutView  .as_view(), name= 'about'  ),
     path('contact', ContactView.as_view(), name= 'contact'),
     # Cuentas
-    path('login'  , LoginView        .as_view    (         ), name= 'login'  ),
-    path('logout' , login_required   (logout_page          ), name= 'logout' ),
-    path('account', login_required   (AccountView.as_view()), name= 'account'),
-    path('sign-in', RegistrarUsuarios.as_view    (         ), name= 'sign-in'),
+    path('account/', include(('apps.login.urls','login'))),
     # Editar Informacion personal
     path('user-personal'    , UserUpdateView      .as_view(), name= 'user-personal'    ),
     path('user-security'    , UserSecurityView    .as_view(), name= 'user-security'    ),
@@ -64,3 +61,5 @@ urlpatterns = [
     path('blog-grid'  , BlogGridView  .as_view(), name='blog-grid'  ),
     path('blog-single', BlogSingleView.as_view(), name='blog-single')
 ]
+
+handler404 = custom_error_404
