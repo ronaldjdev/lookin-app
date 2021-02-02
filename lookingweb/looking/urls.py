@@ -14,52 +14,84 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
-
 from django .contrib import admin
-from django .urls    import path, include
-from django .contrib.       auth  .decorators import login_required
-from django.conf.urls import handler404
-from apps   .home    .      views import *
-from apps   .stock   .      views import *
-from apps   .user    .      views import *
-from apps   .blog    .      views import *
-from apps   .user    .      views import *
+from django .urls    import path , include
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    # Inico
-    path(''     , IndexCreateView.as_view(), name= 'index' ),
-    path('index', IndexCreateView.as_view(), name= 'index' ),
-    # Info
-    path('about'  , AboutView  .as_view(), name= 'about'  ),
-    path('contact', ContactView.as_view(), name= 'contact'),
-    # Cuentas
-    path('account/', include(('apps.login.urls','login'))),
-    # Editar Informacion personal
-    path('user-personal'    , UserUpdateView      .as_view(), name= 'user-personal'    ),
-    path('user-security'    , UserSecurityView    .as_view(), name= 'user-security'    ),
-    path('user-settings'    , UserSettingsView    .as_view(), name= 'user-settings'    ),
-    path('user-notification', UserNotificationView.as_view(), name= 'user-notification'),
-    path('user-privacy'     , UserPrivacyView     .as_view(), name= 'user-privacy'     ),
-    path('user-payment'     , UserPaymentView     .as_view(), name= 'user-payment'     ),
-    # Agregar propiedades
-    path('warning'      , WarningView     .as_view(), name= 'warning'      ),
-    path('add-property' , AddPropertyView .as_view(), name= 'add-property' ),
-    path('add-property-1', login_required(AddPropertyView1.as_view()), name= 'add-property-1'),
-    path('add-property-2', login_required(AddPropertyView2.as_view()), name= 'add-property-2'),
-    path('add-property-3', login_required(AddPropertyView3.as_view()), name= 'add-property-3'),
-    path('add-property-4', login_required(AddPropertyView4.as_view()), name= 'add-property-4'),
-    path('add-property-5', login_required(AddPropertyView5.as_view()), name= 'add-property-5'),
-    # Perfiles de Agentes Inmobiliarios
-    path('agent-single' , AddAgentSingleView .as_view(), name ='agent-single' ),
-    path('agents-grid'  , AddAgentGridView   .as_view(), name ='agents-grid'  ),
-    # Visualizar propiedades
-    path('property-grid'  , PropertyGridView  .as_view(), name = 'property-grid'  ),
-    path('property-single', PropertySingleView.as_view(), name = 'property-single'),
-    # Visualizar Blog de usuarios
-    path('blog-grid'  , BlogGridView  .as_view(), name='blog-grid'  ),
-    path('blog-single', BlogSingleView.as_view(), name='blog-single')
-]
 
-handler404 = custom_error_404
+    path('admin/', admin.site.urls),
+
+    #================================================================
+    #                        INICIO
+    #================================================================
+    
+    path(''    ,include(('apps.home.urls' ,'index' )) ),
+    path('404' ,include(('apps.home.urls' ,'404'   )) ),
+
+    #================================================================
+    #                        URLs INFORMACION
+    #================================================================
+    
+    path('info/' ,include(('apps.home.urls','about'  )) ),
+    path('info/' ,include(('apps.home.urls','contact')) ),
+    path('info/' ,include(('apps.home.urls','pricing')) ),
+    path('info/' ,include(('apps.home.urls','warning')) ),
+
+    #================================================================
+    #                        URLs SESION
+    #================================================================
+    
+    path('account/', include(('apps.login.urls','login'          )) ),
+    path('account/', include(('apps.login.urls','logout'         )) ),
+    path('account/', include(('apps.login.urls','sign-in'        )) ),
+    path('account/', include(('apps.login.urls','reset-password' )) ),
+
+    #================================================================
+    #                        URLs USUARIO
+    #================================================================
+    
+    # Editar Informacion personal
+    path('user/', include(('apps.user.urls','account')) ),
+    path('user/', include(('apps.user.urls','user-notification')) ),
+    path('user/', include(('apps.user.urls','user-payment'     )) ),
+    path('user/', include(('apps.user.urls','user-personal'    )) ),
+    path('user/', include(('apps.user.urls','user-privacy'     )) ),
+    path('user/', include(('apps.user.urls','user-security'    )) ),
+    path('user/', include(('apps.user.urls','user-settings'    )) ),
+    
+    # Perfiles de Agentes Inmobiliarios
+    path('agents/',include(('apps.user.urls' ,'agent-single')) ),
+    path('agents/',include(('apps.user.urls' ,'agents-grid' )) ),
+
+    #================================================================
+    #                        URLs INMUEBLES
+    #================================================================
+    
+    # Agregar inmuebles
+    path('stock/',include(('apps.stock.urls','add-property'  )) ),
+    path('stock/',include(('apps.stock.urls','add-property-1')) ),
+    path('stock/',include(('apps.stock.urls','add-property-2')) ),
+    path('stock/',include(('apps.stock.urls','add-property-3')) ),
+    path('stock/',include(('apps.stock.urls','add-property-4')) ),
+    path('stock/',include(('apps.stock.urls','add-property-5')) ),
+    
+    # Visualizar inmuebles
+    path('/stock/',include(('apps.stock.urls','property-grid'  )) ),
+    path('stock/',include(('apps.stock.urls','property-single')) ),
+
+
+    #================================================================
+    #                        URLs BLOGs
+    #================================================================
+    
+    # Visualizar Blog informativo
+    path('blog/',include(('apps.blog.urls','blog-grid'  )) ),
+    path('blog/',include(('apps.blog.urls','blog-single')) ),
+
+    #================================================================
+    #                        URLs SESION
+    #================================================================
+    
+    # Errores
+]

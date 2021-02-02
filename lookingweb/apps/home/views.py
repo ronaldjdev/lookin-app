@@ -1,11 +1,13 @@
 from django.views    .generic import TemplateView, CreateView
 from django.shortcuts import render
-from django.views.defaults import page_not_found
 from apps.user.models import Usuarios
 from apps.stock.forms import InmuebleForm
 
-
-
+"""
+------------------------------------------------------
+Visualizacion estandar
+------------------------------------------------------ 
+"""
 class IndexCreateView(CreateView):
     model = Usuarios
     form_class = InmuebleForm
@@ -28,11 +30,11 @@ class AboutView(TemplateView):
 class PricingView(TemplateView):
     template_name = "info/pricing.html"
 
+# Error 404
+class Error404View(TemplateView):
+    template_name = "404.html"
 
-def custom_error_404(request):
- 
-    return render(request,'info/404.html')
-
-
-
+# Vista Accion invalida 
+class WarningView(TemplateView):
+    template_name = "info/warning.html"
 

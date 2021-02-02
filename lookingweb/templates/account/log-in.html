@@ -3,52 +3,55 @@
 {% block title %}Iniciar Sesion{% endblock title %}
 
 {% block style %}
-    <style>
-        body {
-            background: #007bff;
-            background: linear-gradient(to right, #0062E6, #33AEFF);
-        }
-    </style>
+<style>
+    body {
+        background: #007bff;
+        background: linear-gradient(to right, #0062E6, #33AEFF);
+    }
+</style>
 {% endblock style %}
 {% block content %}
-    <!--/ Iniciar Sesion /-->
-    <section class="section-signin section-t8">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 col-xl-9 mx-auto">
-                    <div class="card card-signin flex-row my-5">
-                        <div >
-                            <img class="card-img-left d-none d-md-flex" src="{% static 'img/40336.jpg' %}" alt="">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title text-center">Inicio de Sesion</h5>
-                            <form class="form-signin" method="post"> {% csrf_token %}
-                                <div class="form-label-group">
-                                    {{form.username}}
-                                    {{form.username.label_tag}}
-                                </div>
+<!--/ Iniciar Sesion /-->
+<section class="section-signin section-t8">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-xl-9 mx-auto">
+                <div class="card card-signin flex-row my-5">
+                    <div>
+                        <img class="card-img-left d-none d-md-flex" src="{% static 'img/40336.jpg' %}" alt="">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Inicio de Sesion</h5>
+                        <form class="form-signin" method="post"> {% csrf_token %}
+                            <div class="form-label-group">
+                                {{form.username}}
+                                {{form.username.label_tag}}
+                            </div>
 
-                                <div class="form-label-group">
-                                    {{form.password}}
-                                    {{form.password.label_tag}}
-                                </div>
+                            <div class="form-label-group">
+                                {{form.password}}
+                                {{form.password.label_tag}}
+                            </div>
 
-                                <hr>
-                                <a class="d-block text-center mt-2 small" href="reset_password">¿Olvide mi contraseña?</a>
-                                <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Iniciar Sesion</button>
-                                <a class="d-block text-center mt-2 small" href="#">¿No posees unas cuenta? Registrate</a>
-                                <hr class="my-4">
-                                <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit">
-                                    <img class="icon-size-2 mr-2" src="static/svg/google.svg"> Iniciar sesion con Google</button>
-                                <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit">
-                                    <img class="icon-size-2 mr-2" src="static/svg/facebook.svg"> Iniciar sesion con Facebook</button>
-                            </form>
-                        </div>
+                            <hr>
+                            <a class="d-block text-center mt-2 small" href="/account/reset_password">¿Olvide mi contraseña?</a>
+                            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Iniciar
+                                Sesion</button>
+                            <a class="d-block text-center mt-2 small" href="/account/sign-in">¿No posees unas cuenta? Registrate</a>
+                            <hr class="my-4">
+                            <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit">
+                                <img class="icon-size-2 mr-2" src="static/svg/google.svg"> Iniciar sesion con
+                                Google</button>
+                            <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit">
+                                <img class="icon-size-2 mr-2" src="static/svg/facebook.svg"> Iniciar sesion con
+                                Facebook</button>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    {% endblock content %}
+{% endblock content %}
 </body>
