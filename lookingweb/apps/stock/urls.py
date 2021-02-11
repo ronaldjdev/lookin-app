@@ -15,7 +15,4 @@ urlpatterns = [
     path('property-grid', PropertyGridView.as_view(), name='property-grid' ),
     path('property-single', PropertySingleView.as_view(), name='property-single' ),
     
-]
-
-
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

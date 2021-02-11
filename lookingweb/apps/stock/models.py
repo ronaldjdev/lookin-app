@@ -1,5 +1,5 @@
 from django.db import models
-from apps.user.models import Usuarios
+#from apps.user.models import Usuarios
 
 # Create your models here.
 
@@ -54,7 +54,7 @@ class Inmueble(models.Model):
                 ('VICHADA','Vichada'),
         ]
     
-    assignment      = models.ForeignKey   (Usuarios, null=True, blank=True, on_delete=models.CASCADE                                       )
+    #assignment      = models.ForeignKey   (Usuarios, null=True, blank=True, on_delete=models.CASCADE                                       )
     propertyName    = models.CharField    ('Nombre del inmueble' , max_length=100, blank=False, null=False                                 )
     priceProperty   = models.DecimalField ('Precio de inmueble', max_digits=5, decimal_places=2, blank=False, null=False                   )
     area            = models.DecimalField ('Area construida', max_digits=5, decimal_places=2, blank=False, null=False                      )
@@ -75,6 +75,7 @@ class Inmueble(models.Model):
 
         verbose_name = 'Inmueble'
         verbose_name_plural = 'Inmuebles'
+        
 
     def __str__(self):
         """Unicode representation of Inmueble."""

@@ -14,9 +14,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
-from django .contrib import admin
-from django .urls    import path , include
-
+from apps.user.models import Usuarios
+from django .contrib              import admin
+from django .conf                 import settings
+from django .urls                 import path , include, re_path
+from django .conf    .urls.static import static
+from django.views.generic.base import TemplateView
+from django.views.generic import CreateView
+from apps.home.views import IndexCreateView
 
 urlpatterns = [
 
@@ -26,59 +31,38 @@ urlpatterns = [
     #                        INICIO
     #================================================================
     
-    path(''    ,include(('apps.home.urls' ,'index' )) ),
-    path('404' ,include(('apps.home.urls' ,'404'   )) ),
-
+    re_path(r'^$', IndexCreateView.as_view(),name = "index.html" ),
     #================================================================
     #                        URLs INFORMACION
     #================================================================
     
-    path('info/' ,include(('apps.home.urls','about'  )) ),
-    path('info/' ,include(('apps.home.urls','contact')) ),
-    path('info/' ,include(('apps.home.urls','pricing')) ),
-    path('info/' ,include(('apps.home.urls','warning')) ),
+    re_path(r'^info/' , include(('apps.home.urls')) ),
 
     #================================================================
     #                        URLs SESION
     #================================================================
     
-    path('account/', include(('apps.login.urls','login'          )) ),
-    path('account/', include(('apps.login.urls','logout'         )) ),
-    path('account/', include(('apps.login.urls','sign-in'        )) ),
-    path('account/', include(('apps.login.urls','reset-password' )) ),
+    re_path(r'^account/', include(('apps.login.urls')) ),
 
     #================================================================
     #                        URLs USUARIO
     #================================================================
     
     # Editar Informacion personal
-    path('user/', include(('apps.user.urls','account')) ),
-    path('user/', include(('apps.user.urls','user-notification')) ),
-    path('user/', include(('apps.user.urls','user-payment'     )) ),
-    path('user/', include(('apps.user.urls','user-personal'    )) ),
-    path('user/', include(('apps.user.urls','user-privacy'     )) ),
-    path('user/', include(('apps.user.urls','user-security'    )) ),
-    path('user/', include(('apps.user.urls','user-settings'    )) ),
+    re_path(r'^user/', include(('apps.user.urls')) ),
     
     # Perfiles de Agentes Inmobiliarios
-    path('agents/',include(('apps.user.urls' ,'agent-single')) ),
-    path('agents/',include(('apps.user.urls' ,'agents-grid' )) ),
+    re_path(r'^agents/',include(('apps.user.urls')) ),
 
     #================================================================
     #                        URLs INMUEBLES
     #================================================================
     
     # Agregar inmuebles
-    path('stock/',include(('apps.stock.urls','add-property'  )) ),
-    path('stock/',include(('apps.stock.urls','add-property-1')) ),
-    path('stock/',include(('apps.stock.urls','add-property-2')) ),
-    path('stock/',include(('apps.stock.urls','add-property-3')) ),
-    path('stock/',include(('apps.stock.urls','add-property-4')) ),
-    path('stock/',include(('apps.stock.urls','add-property-5')) ),
+    re_path(r'^stock/',include(('apps.stock.urls')) ),
     
     # Visualizar inmuebles
-    path('/stock/',include(('apps.stock.urls','property-grid'  )) ),
-    path('stock/',include(('apps.stock.urls','property-single')) ),
+    re_path(r'^stock/',include(('apps.stock.urls')) ),
 
 
     #================================================================
@@ -86,12 +70,11 @@ urlpatterns = [
     #================================================================
     
     # Visualizar Blog informativo
-    path('blog/',include(('apps.blog.urls','blog-grid'  )) ),
-    path('blog/',include(('apps.blog.urls','blog-single')) ),
+    re_path(r'^blog/',include(('apps.blog.urls')) ),
 
     #================================================================
     #                        URLs SESION
     #================================================================
     
     # Errores
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

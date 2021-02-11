@@ -1,11 +1,12 @@
-from django.shortcuts                   import render
+from django.shortcuts                   import render, redirect
 from django.http                        import HttpResponse     ,HttpResponseRedirect
+from django.contrib.auth.models import User
 from django.urls                        import reverse_lazy
 from django.utils     .decorators       import method_decorator
 from django.views     .decorators.cache import never_cache
 from django.views     .decorators.csrf  import csrf_protect
 from django.views     .generic.edit     import FormView
-from django.views     .generic          import TemplateView     , CreateView, ListView, UpdateView, DeleteView
+from django.views     .generic          import TemplateView     , CreateView
 from django.contrib   .auth             import authenticate     , login, logout
 from apps  .user      .models           import Usuarios
 from       .forms                       import LoginForms       , RegistryForms
@@ -49,10 +50,19 @@ def logout_page(request):
 
 # Registros de usuarios 
 class RegistrarUsuarios (CreateView):
-    model = Usuarios
+    model = User
     form_class = RegistryForms
     template_name = 'account/registro_form.html'
     success_url = reverse_lazy('index')
+
+    def form_valid(self, form):
+        ''' Validamos el formulario'''
+        form.save()
+        usuario = form.cleaned_data.get('username')
+        password = form.cleaned_data.get('password2')
+        usuario = authenticate(username=usuario, password=password)
+        login(self.request, usuario)
+        return redirect('index')
 
 
 # Restablecer contraseña

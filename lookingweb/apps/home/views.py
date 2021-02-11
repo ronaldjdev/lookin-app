@@ -14,8 +14,8 @@ class IndexCreateView(CreateView):
     template_name = "index.html"
 
 #Vista de Inicio
-class IndexView(TemplateView):
-    template_name = "index.html"
+#class IndexView(TemplateView):
+#    template_name = "index.html"
 
 #Vista de contatoc
 class ContactView(TemplateView):

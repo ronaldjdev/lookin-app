@@ -30,10 +30,13 @@ Registro
                     <div class="container shadow p-4 mb-4 bg-white">
                         <div class="row ">
                             <div class="col-md-6 mb-3">
-                                {{form.firstName.label_tag}} {{ form.firstName }}
+                                <label for="first_name">Nombres:</label>
+                                <input class="form-control" placeholder="Nombres" type="text" name="first_name"
+                                    id="first_name">
                             </div>
                             <div class="col-md-6 mb-3">
-                                {{form.lastName.label_tag}} {{form.lastName}}
+                                <label for="last_name">Apellidos:</label>
+                                <input class="form-control" type="text" placeholder="Apellidos" name="last_name" id="last_name">
                             </div>
                         </div>
                     </div>
@@ -42,10 +45,11 @@ Registro
                     <div class="container rounded-lg shadow p-4 mb-4 bg-white ">
                         <div class="row">
                             <div class="col-md-6 mb-3">
-                                {{form.numIden.label_tag}} {{form.numIden}} 
+                                {{form.numIden.label_tag}} {{form.numIden}}
                             </div>
                             <div class="col-md-6 mb-3">
-                                {{form.username.label_tag}} {{form.username}}
+                                <label for="username">Nombre de usuario</label>
+                                <input class="form-control" type="text" placeholder="Nombre de usuario" name="username" id="username">
                             </div>
                         </div>
                     </div>
@@ -54,21 +58,24 @@ Registro
                     <div class="container shadow p-4 mb-4 bg-white">
                         <div class="row">
                             <div class="col-md-6 mb-3">
-                                {{form.email.label_tag}} {{form.email}}
+                                <label for="email">Correo electronico</label>
+                                <input class="form-control" type="text" placeholder="Correo Electronico" name="email" id="email">
                             </div>
-                            <div class="col-md-6 mb-3">
+                            <!-- div class="col-md-6 mb-3">
                                 {{form.gender.label_tag}} {{form.gender}}
-                            </div>
+                            </div -->
                         </div>
                     </div>
 
                     <div class="container shadow p-4 mb-4 bg-white">
                         <div class="row">
                             <div class="col-md-6 mb-3">
-                                {{form.password1.label_tag}} {{form.password1}}
+                                <label for="password1">Ingrese contraseña</label>
+                                <input class="form-control" type="password" name="password1" id="password1">
                             </div>
                             <div class="col-md-6 mb-3">
-                                {{form.password2.label_tag}} {{form.password2}}
+                                <label for="password2">Confirme contraseña</label>
+                                <input class="form-control" type="password" name="password2" id="password2">
                             </div>
                         </div>
                     </div>
@@ -76,7 +83,7 @@ Registro
 
                     <div class="container shadow p-4 mb-4 bg-white">
                         <div class="row">
-                            <div class="col-md-6 mb-3">
+                            <!--div class="col-md-6 mb-3">
                                 {{form.country.label_tag}} {{form.country}}
                             </div>
                             <div class="col-md-6 mb-3">
@@ -87,7 +94,7 @@ Registro
                             </div>
                             <div class="col-md-6 mb-3">
                                 {{form.address2.label_tag}} {{form.address2}}
-                            </div>
+                            </div-->
                         </div>
                     </div>
                     <div class="container">

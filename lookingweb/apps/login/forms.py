@@ -1,5 +1,6 @@
 from django import forms
-from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from apps.user.models import Usuarios
 
 # Formulario de inicio de sesion
@@ -14,10 +15,10 @@ class LoginForms (AuthenticationForm):
                 self.fields['password'].widget.attrs['type']='password'
                 self.fields['password'].widget.attrs['placeholder']='Contraseña'
                 self.fields['password'].widget.attrs['label']='Contraseña'
-                self.fields['password'].widget.attrs['id']='password'
+                self.fields['password'].widget.attrs['id']='password2'
 
 # Formulario de registro de usuario
-class RegistryForms (forms.ModelForm):
+class RegistryForms (UserCreationForm):
 
         password1=forms.CharField(label='Ingrese Contraseña', widget = forms.PasswordInput(
                                 attrs ={
@@ -36,104 +37,17 @@ class RegistryForms (forms.ModelForm):
                         ))
 
         class Meta:
-                model  = Usuarios
+                model  = User
                 fields =[
-                        'firstName',
-                        'lastName',
-                        'numIden',
+                        'first_name',
+                        'last_name',
                         'username',
                         'email',
-                        'gender',
-                        'country',
-                        'depart',
-                        'address',
-                        'address2',
                 ]
                 labels ={
-                        'firstName':'Nombres:',
-                        'lastName':'Apellidos:',
-                        'numIden':'N° de identifiacion:',
+                        'first_name':'Nombres:',
+                        'last_name':'Apellidos:',
                         'username':'Nombre de Usuario:',
                         'email':'Correo Electronico:',
-                        'gender':'Tipo de Genero',
-                        'password1':'Contraseña:',
-                        'password2':'Confirme Contraseña:',
-                        'country':'Pais:',
-                        'depart':'Departamento:',
-                        'address':'Ciudad:',
-                        'address2':'Direccion de Residencia.',
-
-                }
-                widgets ={
-                        'firstName':forms.TextInput(
-                                attrs ={
-                                        'class':'form-control',
-                                        'placeholder':'Nombres',
-                                        'id':'firstName'
-                                }
-                        ),
-                        'lastName':forms.TextInput(
-                                attrs ={
-                                        'class':'form-control',
-                                        'placeholder':'Apellidos',
-                                        'id':'lastName'
-                                }
-                        ),
-                        'numIden':forms.NumberInput(
-                                attrs ={
-                                        'class':'form-control',
-                                        'placeholder':'N° de Identificacion',
-                                        'id':'numIden'
-                                }
-                        ),
-                        'username':forms.TextInput(
-                                attrs ={
-                                        'class':'form-control',
-                                        'placeholder':'Nombre de Usuario',
-                                        'id':'username'
-                                }
-                        ),
-                        'email':forms.EmailInput(
-                                attrs ={
-                                        'class':'form-control',
-                                        'placeholder':'Correo Electronico',
-                                        'id':'email'
-                                }
-                        ),
-                        'gender':forms.Select(
-                                attrs ={
-                                        'class':'selectpicker show-tick',
-                                        'placeholder':'Tipo de Genero',
-                                        'id':'gender'
-                                }
-                        ),
-                        'country':forms.Select(
-                                attrs ={
-                                        'class':'selectpicker show-tick',
-                                        'placeholder':'Pais',
-                                        'id':'country'
-                                }
-                        ),
-                        'depart':forms.Select(
-                                attrs ={
-                                        'class':'selectpicker show-tick',
-                                        'placeholder':'Departamentos',
-                                        'id':'depart',
-                                        'data-size':'5',
-                                }
-                        ),
-                        'address':forms.TextInput(
-                                attrs ={
-                                        'class':'form-control ',
-                                        'placeholder':'Ciudad',
-                                        'id':'address'
-                                }
-                        ),
-                        'address2':forms.TextInput(
-                                attrs ={
-                                        'class':'form-control',
-                                        'placeholder':'Cll 26BN #4-30',
-                                        'id':'address2'
-                                }
-                        ),
+                        
                 }

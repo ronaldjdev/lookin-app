@@ -463,7 +463,7 @@
 
         <div class="text-center">
           <p class="mb-2">
-            <a class="btn btn-lg btn-primary" href="sing-in" style="border-radius: 5rem;">Crea Tu Cuenta</a>
+            <a class="btn btn-lg btn-primary" href="{% url 'sign-in' %}" style="border-radius: 5rem;">Crea Tu Cuenta</a>
           </p>
           <p class="text-muted text-small">¡Es gratis!</p>
         </div>
@@ -486,7 +486,7 @@
             <h2 class="title-a" style="color: white;">Inmuebles destacados</h2>
           </div>
           <div class="title" style="font-size: 1.2rem;">
-            <a class="atw link-c link-icon " href="property-grid">Todos los Inmuebles
+            <a class="atw link-c link-icon " href="{% url 'property-grid' %}">Todos los Inmuebles
               <span class="ion-ios-arrow-forward"></span>
             </a>
           </div>
@@ -504,7 +504,7 @@
               <div class="card-overlay-a-content">
                 <div class="card-header-a">
                   <h2 class="card-title-a">
-                    <a href="property-single">Cll 23N 4-50 <br />
+                    <a href="{% url 'property-single' %}">Cll 23N 4-50 <br />
                       Villa Docente</a>
                   </h2>
                 </div>
@@ -551,7 +551,7 @@
               <div class="card-overlay-a-content">
                 <div class="card-header-a">
                   <h2 class="card-title-a">
-                    <a href="property-single">Cll 24N 4-50 <br />
+                    <a href="{% url 'property-single' %}">Cll 24N 4-50 <br />
                       Villa Docente</a>
                   </h2>
                 </div>
@@ -559,7 +559,7 @@
                   <div class="price-box d-flex">
                     <span class="price-a">Alquiler | $ 350.000</span>
                   </div>
-                  <a href="property-single" class="link-a">Ver mas
+                  <a href="{% url 'property-single' %}" class="link-a">Ver mas
                     <span class="ion-ios-arrow-forward"></span>
                   </a>
                 </div>
@@ -598,7 +598,7 @@
               <div class="card-overlay-a-content">
                 <div class="card-header-a">
                   <h2 class="card-title-a">
-                    <a href="property-single">Cll 25N 4-50 <br />
+                    <a href="{% url 'property-single' %}">Cll 25N 4-50 <br />
                       Villa Docente</a>
                   </h2>
                 </div>
@@ -606,7 +606,7 @@
                   <div class="price-box d-flex">
                     <span class="price-a">Alquiler | $ 650.000</span>
                   </div>
-                  <a href="property-single" class="link-a">Ver mas
+                  <a href="{% url 'property-single' %}" class="link-a">Ver mas
                     <span class="ion-ios-arrow-forward"></span>
                   </a>
                 </div>
@@ -645,7 +645,7 @@
               <div class="card-overlay-a-content">
                 <div class="card-header-a">
                   <h2 class="card-title-a">
-                    <a href="property-single">Cll 26N 4-50 <br />
+                    <a href="{% url 'property-single' %}">Cll 26N 4-50 <br />
                       Villa Docente</a>
                   </h2>
                 </div>
@@ -653,7 +653,7 @@
                   <div class="price-box d-flex">
                     <span class="price-a">Alquiler | $ 12.000</span>
                   </div>
-                  <a href="property-single" class="link-a">Ver mas
+                  <a href="{% url 'property-single' %}" class="link-a">Ver mas
                     <span class="ion-ios-arrow-forward"></span>
                   </a>
                 </div>
@@ -700,7 +700,7 @@
           <h2 class="title-a">Mejores Agentes</h2>
         </div>
         <div class="title" style="font-size: 1.2rem;">
-          <a class="link-c link-icon" href="agents-grid">Todos los Agentes
+          <a class="link-c link-icon" href="{% url 'agents-grid' %}">Todos los Agentes
             <span class="ion-ios-arrow-forward"></span>
           </a>
         </div>
@@ -719,7 +719,7 @@
               <div class="card-header-d">
                 <div class="card-title-d align-self-center">
                   <h3 class="title-d">
-                    <a href="agent-single" class="link-two">Darcy Nayelly <br />
+                    <a href="{% url 'agent-single' %}" class="link-two">Darcy Nayelly <br />
                       Caicedo</a>
                   </h3>
                 </div>
@@ -776,7 +776,7 @@
               <div class="card-header-d">
                 <div class="card-title-d align-self-center">
                   <h3 class="title-d">
-                    <a href="agent-single" class="link-two">Luis Fernando <br />
+                    <a href="{% url 'agent-single' %}" class="link-two">Luis Fernando <br />
                       Camilo</a>
                   </h3>
                 </div>
@@ -833,7 +833,7 @@
               <div class="card-header-d">
                 <div class="card-title-d align-self-center">
                   <h3 class="title-d">
-                    <a href="agent-single" class="link-two">Jhonathan David <br />
+                    <a href="{% url 'agent-single' %}" class="link-two">Jhonathan David <br />
                       Angulo</a>
                   </h3>
                 </div>
@@ -897,7 +897,7 @@
             <h2 class="title-a">Ultimas Noticias</h2>
           </div>
           <div class="title" style="font-size: 1.2rem;">
-            <a class="link-c link-icon" href="blog-grid">Todas las Noticias
+            <a class="link-c link-icon" href="{% url 'blog-grid' %}">Todas las Noticias
               <span class="ion-ios-arrow-forward"></span>
             </a>
           </div>
@@ -918,7 +918,7 @@
                 </div>
                 <div class="card-title-b">
                   <h2 class="title-2">
-                    <a href="blog-single">Noticias <br> Diseños de interiores </a>
+                    <a href="{% url 'blog-single' %}">Noticias <br> Diseños de interiores </a>
                   </h2>
                 </div>
                 <div class="card-date">
@@ -940,7 +940,7 @@
                 </div>
                 <div class="card-title-b">
                   <h2 class="title-2">
-                    <a href="blog-single">Noticias <br> Planes de hospedaje </a>
+                    <a href="{% url 'blog-single' %}">Noticias <br> Planes de hospedaje </a>
                   </h2>
                 </div>
                 <div class="card-date">
@@ -962,7 +962,7 @@
                 </div>
                 <div class="card-title-b">
                   <h2 class="title-2">
-                    <a href="blog-single">Noticias <br> Diseños alucinantes</a>
+                    <a href="{% url 'blog-single' %}'">Noticias <br> Diseños alucinantes</a>
                   </h2>
                 </div>
                 <div class="card-date">

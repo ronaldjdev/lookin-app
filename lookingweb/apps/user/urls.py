@@ -1,19 +1,27 @@
-from django .urls               import path
-from django .conf               import settings
-from django .conf  .urls.static import static
-from        .views              import *
+from django.urls import re_path
+from .views import *
+
 
 urlpatterns = [
     
-    path('account', AccountView.as_view(), name='account' ),
-    path('user-personal', AccountView.as_view(), name='account' ),
-    path('user-security', AccountView.as_view(), name='account' ),
-    path('user-notification', AccountView.as_view(), name='account' ),
-    path('user-setting', AccountView.as_view(), name='account' ),
-    path('user-privacy', AccountView.as_view(), name='account' ),
-    path('user-payment', AccountView.as_view(), name='account' ),
-    path('account', AccountView.as_view(), name='account' ),
+    #================================================================
+    #                      URLs GESTION DE CUENTAS
+    #================================================================
+    re_path(r'^account', AccountView.as_view(), name='account'),
+    re_path(r'^user-notification', UserNotificationView.as_view(), name='user-notification'),
+    re_path(r'^user-payment', UserPaymentView.as_view(), name='user-payment'),
+    re_path(r'^user-personal', UserPersonalView.as_view(), name='user-personal'),
+    re_path(r'^user-privacy', UserPrivacyView.as_view(), name='user-privacy'),
+    re_path(r'^user-security', UserSecurityView.as_view(), name='user-security'),
+    re_path(r'^user-settins', UserSettingView.as_view(), name='user-settings'),
+    
+
+
+
+    #================================================================
+    #                     URLs aGENTES INMOBILIARIOS
+    #================================================================
+
+    re_path(r'^agents-grid', AgentsGridView.as_view(), name='agents-grid'),
+    re_path(r'^agent-single', AgentSingleView.as_view(), name='agent-single')
 ]
-
-
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
