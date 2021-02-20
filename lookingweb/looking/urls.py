@@ -19,9 +19,8 @@ from django .contrib              import admin
 from django .conf                 import settings
 from django .urls                 import path , include, re_path
 from django .conf    .urls.static import static
-from django.views.generic.base import TemplateView
-from django.views.generic import CreateView
 from apps.home.views import IndexCreateView
+from apps.user.views import UserPersonalView
 
 urlpatterns = [
 
@@ -32,6 +31,7 @@ urlpatterns = [
     #================================================================
     
     re_path(r'^$', IndexCreateView.as_view(),name = "index.html" ),
+    
     #================================================================
     #                        URLs INFORMACION
     #================================================================
@@ -49,10 +49,10 @@ urlpatterns = [
     #================================================================
     
     # Editar Informacion personal
-    re_path(r'^user/', include(('apps.user.urls')) ),
+    re_path(r'^users/<username>/', include(('apps.user.urls')) ),
+    #path('users/<username>/user-personal/<pk>/' , UserPersonalView .as_view(), name   ='user-personal' ),
     
     # Perfiles de Agentes Inmobiliarios
-    re_path(r'^agents/',include(('apps.user.urls')) ),
 
     #================================================================
     #                        URLs INMUEBLES
@@ -61,9 +61,6 @@ urlpatterns = [
     # Agregar inmuebles
     re_path(r'^stock/',include(('apps.stock.urls')) ),
     
-    # Visualizar inmuebles
-    re_path(r'^stock/',include(('apps.stock.urls')) ),
-
 
     #================================================================
     #                        URLs BLOGs

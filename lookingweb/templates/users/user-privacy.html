@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
-{% load static   %}
+{% load static %}
 {% block title %}
 Cuenta | Privacidad & compartir
-{% endblock  %}
+{% endblock %}
 
 {% block style %}
 <link rel="stylesheet" href="{% static 'css/account.css' %}">
@@ -32,10 +32,10 @@ Cuenta | Privacidad & compartir
                 <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item">
-                            <a href="index">Inicio</a>
+                            <a href="{% url 'index' %}">Inicio</a>
                         </li>
                         <li class="breadcrumb-item">
-                            <a href="account">Cuenta</a>
+                            <a href="{% url 'account' %}">Cuenta</a>
                         </li>
                         <li class="breadcrumb-item active" aria-current="page">
                             Privacidad &amp; compartir
@@ -63,8 +63,8 @@ Cuenta | Privacidad & compartir
                             </h6>
                             <p class="text-sm text-muted">
                                 <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">Utilizamos cookies 
-                                        para ayudar a personalizar el contenido, adaptar y medir 
+                                    <font style="vertical-align: inherit;">Utilizamos cookies
+                                        para ayudar a personalizar el contenido, adaptar y medir
                                         los anuncios y proporcionar una experiencia más segura.</font>
                                 </font>
                             </p>
@@ -106,8 +106,10 @@ Cuenta | Privacidad & compartir
                             </h6>
                             <p class="text-sm text-muted">
                                 <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">Al activar esta opción, se compartirá tu actividad 
-                                        en las redes sociales vinculadas, que puede incluir tu nombre de usuario, tu foto de perfil y ofertas</font>
+                                    <font style="vertical-align: inherit;">Al activar esta opción, se compartirá tu
+                                        actividad
+                                        en las redes sociales vinculadas, que puede incluir tu nombre de usuario, tu
+                                        foto de perfil y ofertas</font>
                                 </font>
                             </p>
                         </div>
@@ -122,12 +124,14 @@ Cuenta | Privacidad & compartir
                         <div class="col-sm-9">
                             <h6>
                                 <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">Publicar tus ofertas y solicutudes archivadas en redes sociales</font>
+                                    <font style="vertical-align: inherit;">Publicar tus ofertas y solicutudes archivadas
+                                        en redes sociales</font>
                                 </font>
                             </h6>
                             <p class="text-sm text-muted">
                                 <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">Al activar esta opción, lo que guardes se publicará 
+                                    <font style="vertical-align: inherit;">Al activar esta opción, lo que guardes se
+                                        publicará
                                         automáticamente en tus redes sociales vinculadas.</font>
                                 </font>
                             </p>
@@ -143,12 +147,14 @@ Cuenta | Privacidad & compartir
                         <div class="col-sm-9">
                             <h6>
                                 <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">Indexar mi perfil y mis anuncios en los motores de búsqueda</font>
+                                    <font style="vertical-align: inherit;">Indexar mi perfil y mis anuncios en los
+                                        motores de búsqueda</font>
                                 </font>
                             </h6>
                             <p class="text-sm text-muted">
                                 <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">Al activar esta opción, motores de búsqueda, como el de Google, 
+                                    <font style="vertical-align: inherit;">Al activar esta opción, motores de búsqueda,
+                                        como el de Google,
                                         mostrarán tu perfil y tus anuncios en los resultados de búsqueda</font>
                                 </font>
                             </p>
@@ -164,25 +170,24 @@ Cuenta | Privacidad & compartir
                 <!--/Option Privacity & share End /-->
             </div>
             <div class="col-md-6 col-lg-4 ml-lg-auto">
-                <div class="card border-0 shadow">
-                    <div class="card-header bg-primary-light py-4 border-0">
+                <div class="card border-0 shadow radius-r">
+                    <div class="card-header bg-primary-light py-4 border-0 radius-r">
                         <div class="media align-items-center">
                             <div class="media-body">
                                 <h4 class="h6 subtitle text-sm text-primary">
                                     <font style="vertical-align: inherit;">
-                                        <font style="vertical-align: inherit;">Puedes elegir que es lo que de seas compartir </font>
+                                        <font style="vertical-align: inherit;">Puedes elegir que es lo que de seas
+                                            compartir </font>
                                     </font>
                                 </h4>
                             </div>
-                            <svg class="svg-icon svg-icon svg-icon-light w-3rem h-3rem ml-3 text-primary">
-                                <img class="ico-size" src="static/svg/ojo.svg" alt="">
-                            </svg>
+                            <img class="ico-size" src="{% static 'svg/ojo.svg' %}" alt="">
                         </div>
                     </div>
                     <div class="card-body p-4">
                         <p class="text-muted text-sm card-text">
                             <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">La privacidad es un tema que nos pone los pelos 
+                                <font style="vertical-align: inherit;">La privacidad es un tema que nos pone los pelos
                                     de punta. Tu tienes completo control para </font>
                             </font><strong>
                                 <font style="vertical-align: inherit;">
@@ -190,7 +195,7 @@ Cuenta | Privacidad & compartir
                                 </font>
                             </strong>
                             <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">la información que deseas compartir con las demas 
+                                <font style="vertical-align: inherit;">la información que deseas compartir con las demas
                                     personas</font>
                             </font>
                         </p>
@@ -212,6 +217,5 @@ Cuenta | Privacidad & compartir
         </div>
     </div>
 </section>
-    
+
 {% endblock content %}
-    

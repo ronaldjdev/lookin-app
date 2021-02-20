@@ -35,21 +35,21 @@ ALLOWED_HOSTS = []
 # Application definition
 
 DJANGO_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
+    'django.contrib.admin'       ,
+    'django.contrib.auth'        ,
     'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
+    'django.contrib.sessions'    ,
+    'django.contrib.messages'    ,
+    'django.contrib.staticfiles' ,
 
 ]
 
 PROJECT_APPS = [
-    'apps.home',
+    'apps.home' ,
     'apps.login',
     'apps.stock',
-    'apps.user',
-    'apps.blog',
+    'apps.user' ,
+    'apps.blog' ,
 
 ]
 
@@ -59,13 +59,13 @@ INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS
 
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.security.SecurityMiddleware'          ,
+    'django.contrib.sessions.middleware.SessionMiddleware'   ,
+    'django.middleware.common.CommonMiddleware'              ,
+    'django.middleware.csrf.CsrfViewMiddleware'              ,
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware'   ,
+    'django.middleware.clickjacking.XFrameOptionsMiddleware' ,
 ]
 
 ROOT_URLCONF = 'looking.urls'
@@ -77,9 +77,9 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
+                'django.template.context_processors.debug'           ,
+                'django.template.context_processors.request'         ,
+                'django.contrib.auth.context_processors.auth'        ,
                 'django.contrib.messages.context_processors.messages',
             ],
         },
@@ -93,12 +93,12 @@ WSGI_APPLICATION = 'looking.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'lookingdb',
-        'USER': 'ronald',
-        'PASSWORD': '1061789331rj',
-        'HOST': '127.0.0.1',
-        'DATABASE_PORT': '5432',
+        'ENGINE'       : 'django.db.backends.postgresql_psycopg2',
+        'NAME'         : 'Database_1'                             ,
+        'USER'         : 'ronald'                                ,
+        'PASSWORD'     : '1061789331rj'                          ,
+        'HOST'         : '127.0.0.1'                             ,
+        'DATABASE_PORT': '5432'                                  ,
 }
 }
 

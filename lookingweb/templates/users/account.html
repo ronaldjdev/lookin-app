@@ -1,11 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
 
-
 {% block title %}
-    Cuenta 
+Cuenta
 {% endblock title %}
-    
+
 {% block style %}
 <link rel="stylesheet" href="{% static 'css/account.css' %}">
 {% endblock style %}
@@ -32,7 +31,7 @@
                 <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item">
-                            <a href="index">Inicio</a>
+                            <a href="{% url 'index' %}">Inicio</a>
                         </li>
                         <li class="breadcrumb-item active" aria-current="page">
                             Cuenta
@@ -53,10 +52,10 @@
                 <div class="col-6 col-md-4 mb-30px">
                     <div class="card h-100 border-0 shadow hover-animate radius-r">
                         <div class="card-body">
-                            <img class="ico-size" src="static/svg/tarjeta-de-identificacion.svg" alt="">
+                            <img class="ico-size" src="{% static 'svg/tarjeta-de-identificacion.svg' %}" alt="">
                             <h5 class="card-title mb-3">
                                 <a class="text-decoration-none text-dark stretched-link"
-                                    href="user-personal"><strong>Información personal</strong>
+                                    href="{% url 'user-personal'  %}"><strong>Información personal</strong>
                                 </a>
                             </h5>
                             <p class="text-muted card-text text-sm">Proporcione datos personales y cómo podemos
@@ -67,10 +66,10 @@
                 <div class="col-6 col-md-4 mb-30px">
                     <div class="card h-100 border-0 shadow hover-animate radius-r">
                         <div class="card-body">
-                            <img class="ico-size" src="static/svg/laptop.svg" alt="">
+                            <img class="ico-size" src="{% static 'svg/laptop.svg' %}" alt="">
                             <h5 class="card-title mb-3">
                                 <a class="text-decoration-none text-dark stretched-link"
-                                    href="user-security"><strong>Iniciar sesión &amp; seguridad</strong>
+                                    href="{% url 'user-security' %}"><strong>Iniciar sesión &amp; seguridad</strong>
                                 </a>
                             </h5>
                             <p class="text-muted card-text text-sm">Actualice su contraseña y asegure su cuenta</p>
@@ -80,9 +79,10 @@
                 <div class="col-6 col-md-4 mb-30px">
                     <div class="card h-100 border-0 shadow hover-animate radius-r">
                         <div class="card-body">
-                            <img class="ico-size" src="static/svg/tarjeta-de-credito.svg" alt="">
+                            <img class="ico-size" src="{% static 'svg/tarjeta-de-credito.svg' %}" alt="">
                             <h5 class="card-title mb-3">
-                                <a class="text-decoration-none text-dark stretched-link" href="user-payment"> <strong>Pagos
+                                <a class="text-decoration-none text-dark stretched-link"
+                                    href="{% url 'user-payment' %}"> <strong>Pagos
                                         &amp; desembolso</strong>
                                 </a>
                             </h5>
@@ -94,10 +94,10 @@
                 <div class="col-6 col-md-4 mb-30px">
                     <div class="card h-100 border-0 shadow hover-animate radius-r">
                         <div class="card-body">
-                            <img class="ico-size" src="static/svg/megafono.svg" alt="">
+                            <img class="ico-size" src="{% static 'svg/megafono.svg' %}" alt="">
                             <h5 class="card-title mb-3">
                                 <a class="text-decoration-none text-dark stretched-link"
-                                    href="user-notification"><strong>Notificaciones</strong>
+                                    href="{% url 'user-notification' %}"><strong>Notificaciones</strong>
                                 </a>
                             </h5>
                             <p class="text-muted card-text text-sm">Elija las preferencias de notificación y cómo
@@ -108,9 +108,10 @@
                 <div class="col-6 col-md-4 mb-30px">
                     <div class="card h-100 border-0 shadow hover-animate radius-r">
                         <div class="card-body">
-                            <img class="ico-size" src="static/svg/ojo.svg" alt="">
+                            <img class="ico-size" src="{% static 'svg/ojo.svg' %}" alt="">
                             <h5 class="card-title mb-3">
-                                <a class="text-decoration-none text-dark stretched-link" href="user-privacy"><strong>Privacidad
+                                <a class="text-decoration-none text-dark stretched-link"
+                                    href="{% url 'user-privacy' %}"><strong>Privacidad
                                         &amp; compartir</strong>
                                 </a>
                             </h5>
@@ -122,10 +123,10 @@
                 <div class="col-6 col-md-4 mb-30px">
                     <div class="card h-100 border-0 shadow hover-animate radius-r ">
                         <div class="card-body">
-                            <img class="ico-size" src="static/svg/mantenimiento.svg" alt="">
+                            <img class="ico-size" src="{% static 'svg/mantenimiento.svg' %}" alt="">
                             <h5 class="card-title mb-3">
                                 <a class="text-decoration-none text-dark stretched-link"
-                                    href="user-settings"><strong>Preferencias globales</strong>
+                                    href="{% url 'user-settings' %}"><strong>Preferencias globales</strong>
                                 </a>
                             </h5>
                             <p class="text-muted card-text text-sm">Establezca su idioma, moneda y zona horaria

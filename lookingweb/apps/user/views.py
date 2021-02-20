@@ -1,5 +1,9 @@
-from django.shortcuts import render
-from django.views.generic import TemplateView
+from django.shortcuts import get_object_or_404
+from django.urls import reverse_lazy
+from django.contrib  .auth.models import User
+from django.views    .generic     import TemplateView     , CreateView, UpdateView
+from       .forms                 import PerfilForm
+from       .models                import Usuarios
 # Create your views here.
 
 
@@ -12,27 +16,42 @@ class AccountView(TemplateView):
 
 
 class UserNotificationView(TemplateView):
-    template_name = "user/user-notification.html"
+    template_name = "users/user-notification.html"
 
 
 class UserPaymentView(TemplateView):
-    template_name = "user/user-payment.html"
+    template_name = "users/user-payment.html"
 
 
-class UserPersonalView(TemplateView):
-    template_name = "user/user-personal.html"
+class UserPersonalView(UpdateView):
+    model = Usuarios
+    form_class = PerfilForm
+    template_name = "users/user-personal.html"
+    success_url = reverse_lazy("user-personal")
+
+    def get_object(self):
+        return get_object_or_404 (User)
+
+    def form_valid(form) :
+        form.save()
+        return super().form_valid(form)
+
+
+
+
+    
 
 
 class UserPrivacyView(TemplateView):
-    template_name = "user/user-privacy.html"
+    template_name = "users/user-privacy.html"
 
 
 class UserSecurityView(TemplateView):
-    template_name = "user/user-security.html"
+    template_name = "users/user-security.html"
 
 
 class UserSettingView(TemplateView):
-    template_name = "user/user-setting.html"
+    template_name = "users/user-settings.html"
 
 
 

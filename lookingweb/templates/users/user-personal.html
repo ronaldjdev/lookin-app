@@ -31,10 +31,10 @@ Cuenta | Información personal
                 <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item">
-                            <a href="index">Inicio</a>
+                            <a href="{% url 'index' %}">Inicio</a>
                         </li>
                         <li class="breadcrumb-item">
-                            <a href="account">Cuenta</a>
+                            <a href="{% url 'account' %}">Cuenta</a>
                         </li>
                         <li class="breadcrumb-item active" aria-current="page">
                             Información personal
@@ -73,10 +73,10 @@ Cuenta | Información personal
                     </div>
                     <p class="text-sm text-muted"><i class="fa fa-id-card fa-fw mr-2"></i>
                         <font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">{{request.user.username}}</font>
+                            <font style="vertical-align: inherit;">{{request.user.first_name}} {{request.user.last_name}}</font>
                         </font><br><i class="fa fa-birthday-cake fa-fw mr-2"></i>
                         <font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">{{request.user.birthday}}</font>
+                            <font style="vertical-align: inherit;">{{request.birthday}}</font>
                         </font><br><i class="fa fa-envelope-open fa-fw mr-2"></i>
                         <font style="vertical-align: inherit;">
                             <font style="vertical-align: inherit;">{{request.user.email}} </font>
@@ -86,29 +86,27 @@ Cuenta | Información personal
                             </font>
                         </span> <i class="fa fa-phone fa-fw mr-2"></i>
                         <font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">{{request.user.numPhone}}</font>
+                            <font style="vertical-align: inherit;">{{request.usuario.numPhone}}</font>
                         </font>
                     </p>
                     <div class="collapse" id="personalDetails">
-                        <form action="#">
+                        <form action="#" method="POST"> {% csrf_token %}
                             <div class="row pt-4">
                                 <div class="form-group col-md-6">
                                     <label class="form-label" for="name">Nombre</label>
-                                    <input class="form-control input-border-radius" type="text" name="name" id="name" value="John Doe">
+                                    {{form.first_name}}
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label class="form-label" for="date">Fecha de nacimiento</label>
-                                    <input class="form-control input-border-radius" type="text" name="date" id="date" value="06/22/1980">
+                                    {{form.birthday}}
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label class="form-label" for="email">Email </label>
-                                    <input class="form-control input-border-radius" type="email" name="email" id="email"
-                                        value="john.doe@directory.com">
+                                    {{form.email}}
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label class="form-label" for="phone">Telefono</label>
-                                    <input class="form-control input-border-radius" type="text" name="phone" id="phone"
-                                        value="+42055544466">
+                                    {{form.numPhone}}
                                 </div>
                             </div>
                             <button class="btn btn-outline-primary collapsed radius-border-r align-items-center"
@@ -255,7 +253,7 @@ Cuenta | Información personal
                                     </font>
                                 </h4>
                             </div>
-                            <img class="ico-size" src="static/svg/tarjeta-de-identificacion.svg" alt="">
+                            <img class="ico-size" src="{% static 'svg/tarjeta-de-identificacion.svg' %}" alt="">
                         </div>
                     </div>
                     <div class="card-body p-4">
