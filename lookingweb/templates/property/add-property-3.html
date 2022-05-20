@@ -1,0 +1,351 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!--/ Image Nav bar Start /-->
+<section class="d-flex img-fluid-rj" style="background-image: url(static/img/bg/valley_illustration.png);">
+    <div class="container-fluid intro-bg ">
+    </div>
+</section>
+<!--/ Image Nav bar End /-->
+
+<!--/ Intro Single star /-->
+<section class="intro-single">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-lg-8">
+                <div class="title-single-box">
+                    <span class="subtitle text-secondary ">Agregar un inmueble nuevo</span>
+                    <h2 class="color-text-a">Disposición y comodidades</h2>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-4">
+                <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="add-property-1">Informacion basica</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="add-property-2">Textos</a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">
+                            Disposición y comodidades
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="padding-bottom: 10;">
+        <div class="progress rounded-0 sticky-top" style="height: 8px; top: 71px;">
+            <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0"
+                aria-valuemax="100">
+        </div>
+    </div>
+</section>
+<!--/ Intro Single End /-->
+
+<section class="py-5">
+    <div class="container">
+        <h1 class="h2 mb-5">
+            <span class="text-muted float-right">
+                <font style="vertical-align: inherit;">
+                    <font style="vertical-align: inherit;">Paso 3</font>
+                </font>
+            </span>
+        </h1>
+        <form>
+            <div class="row form-block">
+                <div class="col-lg-4">
+                    <h4>
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">Habitaciones y camas</font>
+                        </font>
+                    </h4>
+                    <p class="text-muted text-sm">
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;"> La cantidad y el tipo de camas que tiene determina
+                                cuántos huéspedes pueden alojarse cómodamente</font>
+                        </font>
+                    </p>
+                </div>
+                <div class="col-lg-7 ml-auto">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <label class="form-label">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">Camas</font>
+                                </font>
+                            </label>
+                            <div class="d-flex align-items-center">
+                                <div class="btn btn-items btn-items-decrease">
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">-</font>
+                                    </font>
+                                </div>
+                                <input class="form-control input-items" type="text" value="1" disabled="">
+                                <div class="btn btn-items btn-items-increase">
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">+</font>
+                                    </font>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <label class="form-label">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">Dormitorios</font>
+                                </font>
+                            </label>
+                            <div class="d-flex align-items-center">
+                                <div class="btn btn-items btn-items-decrease">
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">-</font>
+                                    </font>
+                                </div>
+                                <input class="form-control input-items" type="text" value="1" disabled="">
+                                <div class="btn btn-items btn-items-increase">
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">+</font>
+                                    </font>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <label class="form-label">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">Baños</font>
+                                </font>
+                            </label>
+                            <div class="d-flex align-items-center">
+                                <div class="btn btn-items btn-items-decrease">
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">-</font>
+                                    </font>
+                                </div>
+                                <input class="form-control input-items" type="text" value="1" disabled="">
+                                <div class="btn btn-items btn-items-increase">
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">+</font>
+                                    </font>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row form-block">
+                <div class="col-lg-4">
+                    <h4>
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">Comodidades</font>
+                        </font>
+                    </h4>
+                    <p class="text-muted text-sm">
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">Su habitación, una habitación humana propiamente
+                                dicha, aunque un poco demasiado pequeña, se encontraba tranquilamente entre sus cuatro
+                                paredes familiares. </font>
+                            <font style="vertical-align: inherit;">Sobre la mesa había una colección de muestras
+                                textiles.</font>
+                        </font>
+                    </p>
+                </div>
+                <div class="col-lg-7 ml-auto">
+                    <div class="form-group">
+                        <label class="form-label">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">Servicios disponibles</font>
+                            </font>
+                        </label>
+                        <ul class="list-inline mb-0">
+                            <li class="list-inline-item">
+                                <div class="custom-control custom-checkbox">
+                                    <input class="custom-control-input" type="checkbox" id="amenities_0"
+                                        name="amenities[]">
+                                    <label class="custom-control-label text-muted" for="amenities_0">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">Cocina </font>
+                                        </font>
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="list-inline-item">
+                                <div class="custom-control custom-checkbox">
+                                    <input class="custom-control-input" type="checkbox" id="amenities_1"
+                                        name="amenities[]">
+                                    <label class="custom-control-label text-muted" for="amenities_1">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">Champú </font>
+                                        </font>
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="list-inline-item">
+                                <div class="custom-control custom-checkbox">
+                                    <input class="custom-control-input" type="checkbox" id="amenities_2"
+                                        name="amenities[]">
+                                    <label class="custom-control-label text-muted" for="amenities_2">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">Calefacción </font>
+                                        </font>
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="list-inline-item">
+                                <div class="custom-control custom-checkbox">
+                                    <input class="custom-control-input" type="checkbox" id="amenities_3"
+                                        name="amenities[]">
+                                    <label class="custom-control-label text-muted" for="amenities_3">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">Aire acondicionado </font>
+                                        </font>
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="list-inline-item">
+                                <div class="custom-control custom-checkbox">
+                                    <input class="custom-control-input" type="checkbox" id="amenities_4"
+                                        name="amenities[]">
+                                    <label class="custom-control-label text-muted" for="amenities_4">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">Lavadora </font>
+                                        </font>
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="list-inline-item">
+                                <div class="custom-control custom-checkbox">
+                                    <input class="custom-control-input" type="checkbox" id="amenities_5"
+                                        name="amenities[]">
+                                    <label class="custom-control-label text-muted" for="amenities_5">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">Secadora </font>
+                                        </font>
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="list-inline-item">
+                                <div class="custom-control custom-checkbox">
+                                    <input class="custom-control-input" type="checkbox" id="amenities_6"
+                                        name="amenities[]">
+                                    <label class="custom-control-label text-muted" for="amenities_6">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">Wifi </font>
+                                        </font>
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="list-inline-item">
+                                <div class="custom-control custom-checkbox">
+                                    <input class="custom-control-input" type="checkbox" id="amenities_7"
+                                        name="amenities[]">
+                                    <label class="custom-control-label text-muted" for="amenities_7">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">Desayuno </font>
+                                        </font>
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="list-inline-item">
+                                <div class="custom-control custom-checkbox">
+                                    <input class="custom-control-input" type="checkbox" id="amenities_8"
+                                        name="amenities[]">
+                                    <label class="custom-control-label text-muted" for="amenities_8">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">Chimenea interior </font>
+                                        </font>
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="list-inline-item">
+                                <div class="custom-control custom-checkbox">
+                                    <input class="custom-control-input" type="checkbox" id="amenities_9"
+                                        name="amenities[]">
+                                    <label class="custom-control-label text-muted" for="amenities_9">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">Timbre / intercomunicador inalámbrico
+                                            </font>
+                                        </font>
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="list-inline-item">
+                                <div class="custom-control custom-checkbox">
+                                    <input class="custom-control-input" type="checkbox" id="amenities_10"
+                                        name="amenities[]">
+                                    <label class="custom-control-label text-muted" for="amenities_10">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">Portero </font>
+                                        </font>
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="list-inline-item">
+                                <div class="custom-control custom-checkbox">
+                                    <input class="custom-control-input" type="checkbox" id="amenities_11"
+                                        name="amenities[]">
+                                    <label class="custom-control-label text-muted" for="amenities_11">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">Perchas </font>
+                                        </font>
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="list-inline-item">
+                                <div class="custom-control custom-checkbox">
+                                    <input class="custom-control-input" type="checkbox" id="amenities_12"
+                                        name="amenities[]">
+                                    <label class="custom-control-label text-muted" for="amenities_12">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">Planchar </font>
+                                        </font>
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="list-inline-item">
+                                <div class="custom-control custom-checkbox">
+                                    <input class="custom-control-input" type="checkbox" id="amenities_13"
+                                        name="amenities[]">
+                                    <label class="custom-control-label text-muted" for="amenities_13">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">Secador de pelo </font>
+                                        </font>
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="list-inline-item">
+                                <div class="custom-control custom-checkbox">
+                                    <input class="custom-control-input" type="checkbox" id="amenities_14"
+                                        name="amenities[]">
+                                    <label class="custom-control-label text-muted" for="amenities_14">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">Espacio de trabajo apto para
+                                                portátiles </font>
+                                        </font>
+                                    </label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row form-block flex-column flex-sm-row">
+                <div class="col text-center text-sm-left"><a class="btn btn-link text-muted" href="add-property-2"> <i
+                            class="fa-chevron-left fa mr-2"></i>
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">atrás</font>
+                        </font>
+                    </a>
+                </div>
+                <div class="col text-center text-sm-right"><a class="btn btn-primary px-3" href="add-property-4">
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;"> Próximo paso</font>
+                        </font><i class="fa-chevron-right fa ml-2"></i>
+                    </a></div>
+            </div>
+        </form>
+    </div>
+</section>
+{% endblock content %}

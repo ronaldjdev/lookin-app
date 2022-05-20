@@ -34,8 +34,8 @@ $(window).scroll(function () {
 });
 
 $(window).scroll(function () {
-    if ($(document).scrollTop() > 50) {
-        $('#changeLogo').attr('src','static/img/LookingHome.png');
+    if ($(document).scrollTop() > 100) {
+        $('#changeLogo').attr('src','static/img/LookingHome.png' );
         console.log("OK");
     } else {
         $('#changeLogo').attr('src','static/img/Looking-3-white.png');

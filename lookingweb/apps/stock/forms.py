@@ -1,45 +1,45 @@
 from  django                    import forms
-from  django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from .models                    import Inmueble
 
 #Formularios para agregar inmuebles 
 class InmuebleForm(forms.ModelForm):
-        """Form definition for Inmueble."""
+        """definicion Form para Inmueble."""
 
         class Meta:
-                """Meta definition for Inmuebleform."""
+                """definicion Meta para Inmuebleform."""
 
                 model  = Inmueble
                 fields = (
-                        'propertyName',
-                        'priceProperty',
-                        'area',
+                        'propertyName'   ,
+                        'priceProperty'  ,
+                        'area'           ,
                         'addressProperty',
-                        'rooms',
-                        'bath',
-                        'garage',
-                        'imagesRoom',
-                        'typeProperty',
+                        'rooms'          ,
+                        'bath'           ,
+                        'garage'         ,
+                        'imagesRoom'     ,
+                        'typeProperty'   ,
                         'countryProperty',
-                        'departProperty',
-                        'cityProperty',
-                        'descrip',
+                        'departProperty' ,
+                        'cityProperty'   ,
+                        'descrip'        ,
                 )
                         
                 labels = {
-                        'propertyName':'Inmueble',
-                        'priceProperty':'Precio',
-                        'area':'Area',
-                        'addressProperty':'direccion',
-                        'rooms':'N° Habitaciones',
-                        'bath':'N° Baños',
-                        'garage':'N° Garajes',
-                        'imagesRoom':'Imagenes',
-                        'typeProperty':'Tipo Propiedad',
-                        'countryProperty':'Pais/Region',
-                        'departProperty':'Departamento',
-                        'cityProperty':'Ciudad',
-                        'descrip':'Descipccion',               
+
+                        'propertyName'   :'Inmueble'       ,
+                        'priceProperty'  :'Precio'         ,
+                        'area'           :'Area'           ,
+                        'addressProperty':'direccion'      ,
+                        'rooms'          :'N° Habitaciones',
+                        'bath'           :'N° Baños'       ,
+                        'garage'         :'N° Garajes'     ,
+                        'imagesRoom'     :'Imagenes'       ,
+                        'typeProperty'   :'Tipo Propiedad' ,
+                        'countryProperty':'Pais/Region'    ,
+                        'departProperty' :'Departamento'   ,
+                        'cityProperty'   :'Ciudad'         ,
+                        'descrip'        :'Descipccion'    ,               
                 }
 
                 widgets = {

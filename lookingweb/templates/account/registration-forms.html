@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Registro
+{% endblock title %}
+
+{% block content %}
+<!--/ Image Nav bar Start /-->
+<section class="d-flex img-fluid-rj" style="background-image: url(static/img/bg/valley_illustration.png);">
+    <div class="container-fluid intro-bg ">
+    </div>
+</section>
+<!--/ Image Nav bar End /-->
+<!--Registry Form-->
+<section class="section-registry section-t8 justify-content-center">
+    <div class="container">
+        <div class="py-5 text-center">
+            <img class="d-block mx-auto mb-4" src="static/img/apple-touch-icon.png" alt="" width="72" height="92">
+            <h2>Por favor, Registrate</h2>
+            <p class="lead">Y haz parte de nuestra maravillosa comunidad</p>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center">
+        <div class="col-md-8 order-md-1">
+            <h4 class="mb-3">Ingresa el formulario</h4>
+
+
+            <form action="" method="post"> {% csrf_token %}
+                <div class="row">
+                    <div class="container shadow p-4 mb-4 bg-white">
+                        <div class="row ">
+                            <div class="col-md-6 mb-3">
+                                <label>Nombres:</label>
+                                {{form.first_name}}
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label>Apellidos:</label>
+                                {{form.last_name}}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container rounded-lg shadow p-4 mb-4 bg-white ">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label>Nombre de usuario:</label>
+                                {{form.username}}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container shadow p-4 mb-4 bg-white">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label>Correo electronico</label>
+                                {{form.email}}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container shadow p-4 mb-4 bg-white">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label>Ingrese contraseña</label>
+                                {{form.password1}}
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label>Confirme contraseña</label>
+                                {{form.password2}}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container">
+                        <hr class="mb-4">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="same-address">
+                            <label class="custom-control-label" for="same-address">Terminos y Condiciones</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="save-info">
+                            <label class="custom-control-label" for="save-info">Quiero recibir informacion en mi
+                                email</label>
+                        </div>
+                        </hr>
+                    </div>
+                    <hr class="mb-4">
+                    <button class="btn btn-primary btn-lg btn-block " type="submit" href="{% url 'index' %}"
+                        style="border-radius: 5rem;">Registrate</button>
+                    </hr>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+<!--/ Registry Form End /-->
+{% endblock content %}

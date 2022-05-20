@@ -1,13 +1,18 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block title %}Precios{% endblock  %}
+{% block title %}Precios{% endblock title %}
 
 {% block style %}
 <link rel="stylesheet" href="{% static 'css/pricing.css' %}">
-
-{% endblock  %}
+{% endblock style %}
   
 {% block content %}
+<!--/ Image Nav bar Start /-->
+<section class="d-flex img-fluid-rj" style="background-image: url(static/img/bg/valley_illustration.png);">
+  <div class="container-fluid intro-bg ">
+  </div>
+</section>
+<!--/ Image Nav bar End /-->
 
 <section class="pricing section-t8">
   <div class="container">
@@ -79,4 +84,4 @@
     </div>
   </div>
 </section>
-{% endblock %}
+{% endblock content %}
